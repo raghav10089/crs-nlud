@@ -3,287 +3,509 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centre for Regulatory Studies | NLU Delhi</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
+    <title>CRS | NLU Delhi (The Chancery)</title>
+    <!-- Fonts: Cinzel (Roman Authority), EB Garamond (The Text) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- EMBEDDED CSS --- */
+        /* --- THEME VARIABLES --- */
         :root {
-            --primary: #0f172a;       /* Deep Navy */
-            --accent: #ca8a04;        /* Academic Gold */
-            --accent-hover: #a16207;
-            --text-main: #334155;
-            --text-light: #64748b;
-            --bg-body: #f8fafc;
-            --bg-white: #ffffff;
-            --font-head: 'Playfair Display', serif;
-            --font-body: 'Inter', sans-serif;
-            --shadow-card: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --vellum: #F2F0E9;        /* Warm Antique Paper */
+            --ink: #1A1A1A;           /* Soft Black */
+            --oxblood: #781C1C;       /* Sealing Wax Red */
+            --gold-thread: #BFA978;   /* Muted Metallic */
+            --line-color: rgba(26, 26, 26, 0.15);
+            
+            --font-head: 'Cinzel', serif;
+            --font-body: 'EB Garamond', serif;
         }
 
-        /* Base Reset */
+        /* --- RESET & BASE --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        
+        html {
+            font-size: 18px;
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: var(--font-body);
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.7;
+            background-color: var(--vellum);
+            color: var(--ink);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; }
-        
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-        /* Navigation */
-        .navbar {
-            background: var(--bg-white);
-            border-bottom: 1px solid #e2e8f0;
-            padding: 1rem 0;
+        a { text-decoration: none; color: inherit; transition: 0.3s ease; }
+        ul { list-style: none; }
+        img { display: block; width: 100%; }
+
+        /* --- TYPOGRAPHY --- */
+        h1, h2, h3, h4 {
+            font-family: var(--font-head);
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        .display-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            letter-spacing: 0.02em;
+            margin-bottom: 30px;
+            color: var(--ink);
+        }
+
+        .section-marker {
+            font-family: var(--font-head);
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            color: var(--oxblood);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--oxblood);
+            padding-bottom: 10px;
+            width: fit-content;
+        }
+
+        .lead-paragraph {
+            font-size: 1.6rem;
+            line-height: 1.4;
+            max-width: 90%;
+            margin-bottom: 40px;
+        }
+
+        .meta-data {
+            font-family: var(--font-head);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        /* --- LAYOUT ARCHITECTURE (Split Screen) --- */
+        .chancery-layout {
+            display: grid;
+            grid-template-columns: 400px 1fr; /* Fixed Sidebar | Fluid Content */
+            min-height: 100vh;
+        }
+
+        /* --- THE FIXED SIDEBAR (Identity) --- */
+        .sidebar-panel {
+            background: var(--ink);
+            color: var(--vellum);
+            height: 100vh;
             position: sticky;
             top: 0;
-            z-index: 1000;
-        }
-        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
-        .brand { display: flex; align-items: center; gap: 12px; }
-        .brand-line { width: 4px; height: 40px; background: var(--accent); }
-        .brand-text { display: flex; flex-direction: column; }
-        .uni { font-size: 0.75rem; font-weight: 700; color: var(--text-light); letter-spacing: 1px; }
-        .centre { font-family: var(--font-head); font-size: 1.25rem; font-weight: 700; color: var(--primary); }
-        
-        .nav-links { display: flex; gap: 2rem; align-items: center; }
-        .nav-links a:hover { color: var(--accent); }
-        .btn-nav {
-            background: var(--primary); color: white !important;
-            padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 0.9rem;
-        }
-        .btn-nav:hover { background: var(--accent); }
-
-        /* Hero */
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white; padding: 6rem 0; position: relative;
-        }
-        .hero h1 { font-family: var(--font-head); font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; }
-        .hero p { font-size: 1.2rem; color: #cbd5e1; margin-bottom: 2.5rem; max-width: 600px; }
-        .btn-primary {
-            background: var(--accent); color: white; padding: 0.8rem 1.5rem;
-            border-radius: 6px; font-weight: 600; display: inline-block;
-        }
-        .btn-secondary {
-            background: rgba(255,255,255,0.1); color: white; padding: 0.8rem 1.5rem;
-            border-radius: 6px; font-weight: 600; border: 1px solid rgba(255,255,255,0.2); margin-left: 10px;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: 4px double var(--gold-thread);
+            z-index: 100;
         }
 
-        /* Sections */
-        .section-padding { padding: 5rem 0; }
-        .section-title {
-            font-family: var(--font-head); font-size: 2.5rem; color: var(--primary);
-            text-align: center; margin-bottom: 3rem; position: relative;
-        }
-        .section-title::after {
-            content: ''; display: block; width: 60px; height: 4px; background: var(--accent);
-            margin: 15px auto 0;
+        .brand-block {
+            border-bottom: 1px solid rgba(242, 240, 233, 0.2);
+            padding-bottom: 40px;
         }
 
-        /* Mandate Grid */
-        .mandate-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-        .mandate-text p { margin-bottom: 1.5rem; font-size: 1.1rem; text-align: justify; }
+        .brand-sub {
+            font-family: var(--font-head);
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            color: var(--gold-thread);
+            margin-bottom: 15px;
+            display: block;
+        }
 
-        /* Team Grid */
-        .team-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;
+        .brand-main {
+            font-size: 2.2rem;
+            line-height: 1.1;
+            letter-spacing: 0.05em;
         }
-        .team-card {
-            background: var(--bg-white); padding: 2rem; text-align: center;
-            border-radius: 8px; box-shadow: var(--shadow-card); border-top: 4px solid var(--accent);
-        }
-        .team-avatar {
-            width: 100px; height: 100px; background: #e2e8f0; border-radius: 50%;
-            margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;
-            font-size: 2rem; color: var(--text-light);
-        }
-        .team-name { font-family: var(--font-head); font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--primary); }
-        .team-role { font-size: 0.9rem; color: var(--accent); font-weight: 600; text-transform: uppercase; }
 
-        /* Research / Projects */
-        .research-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;
+        .nav-vertical {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 40px;
         }
-        .research-card {
-            background: var(--bg-white); padding: 2rem; border-radius: 8px;
-            box-shadow: var(--shadow-card); transition: 0.3s;
+
+        .nav-item {
+            font-family: var(--font-head);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            color: rgba(242, 240, 233, 0.6);
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
-        .research-card:hover { transform: translateY(-5px); border-bottom: 4px solid var(--accent); }
-        .research-icon { font-size: 2rem; color: var(--accent); margin-bottom: 1rem; }
-        .research-title { font-family: var(--font-head); font-size: 1.4rem; margin-bottom: 1rem; color: var(--primary); }
 
-        /* Footer */
-        .site-footer { background: var(--primary); color: white; padding: 4rem 0 2rem; margin-top: auto; }
-        .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 3rem; }
-        .footer-col h4 { font-family: var(--font-head); font-size: 1.5rem; margin-bottom: 1rem; color: white; }
-        .footer-contact p { margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px; color: #cbd5e1; }
-        .footer-contact i { color: var(--accent); }
-        .copyright { text-align: center; border-top: 1px solid #334155; padding-top: 2rem; font-size: 0.9rem; color: #94a3b8; }
+        .nav-item::before {
+            content: '';
+            width: 0px; height: 1px;
+            background: var(--gold-thread);
+            transition: 0.3s;
+        }
 
-        /* Mobile */
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2.5rem; }
-            .mandate-grid, .footer-grid { grid-template-columns: 1fr; }
+        .nav-item:hover { color: var(--vellum); }
+        .nav-item:hover::before { width: 20px; }
+
+        .sidebar-footer {
+            font-family: var(--font-head);
+            font-size: 0.7rem;
+            opacity: 0.4;
+            letter-spacing: 0.1em;
+        }
+
+        /* --- THE SCROLLING CONTENT --- */
+        .content-panel {
+            background: var(--vellum);
+        }
+
+        /* --- HERO HEADER --- */
+        .hero-header {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 0 80px;
+            border-bottom: 1px solid var(--line-color);
+            position: relative;
+            background-image: radial-gradient(var(--line-color) 1px, transparent 0);
+            background-size: 40px 40px; /* Dot grid pattern */
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px; right: 80px;
+            font-family: var(--font-head);
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            color: var(--oxblood);
+            writing-mode: vertical-rl;
+        }
+
+        /* --- CONTENT SECTIONS --- */
+        .section-wrapper {
+            display: grid;
+            grid-template-columns: 80px 1fr; /* Vertical Label | Content */
+            border-bottom: 1px solid var(--line-color);
+        }
+
+        .vertical-label {
+            border-right: 1px solid var(--line-color);
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            padding: 40px 0;
+            text-align: center;
+            font-family: var(--font-head);
+            font-size: 0.8rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            background: rgba(0,0,0,0.02);
+            color: var(--oxblood);
+        }
+
+        .section-inner {
+            padding: 100px 80px;
+        }
+
+        /* --- THE DOCKET (Grid) --- */
+        .docket-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .docket-card {
+            border: 1px solid var(--line-color);
+            background: #fff;
+            padding: 40px;
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.05); /* Architectural shadow */
+            transition: 0.3s;
+        }
+
+        .docket-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 15px 15px 0px var(--oxblood);
+            border-color: var(--ink);
+        }
+
+        .card-type {
+            font-family: var(--font-head);
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            color: var(--oxblood);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .card-excerpt {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .btn-link {
+            font-family: var(--font-head);
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            border-bottom: 1px solid var(--ink);
+            padding-bottom: 3px;
+            text-transform: uppercase;
+        }
+
+        /* --- PORTRAITS --- */
+        .portrait-layout {
+            display: flex;
+            gap: 60px;
+        }
+
+        .portrait-box {
+            width: 50%;
+        }
+
+        .img-frame {
+            width: 100%;
+            height: 400px;
+            border: 1px solid var(--ink);
+            padding: 10px;
+            margin-bottom: 25px;
+        }
+
+        .img-frame img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) sepia(20%);
+            transition: 0.5s;
+        }
+
+        .portrait-box:hover img { filter: grayscale(0%); }
+
+        .person-name {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .person-role {
+            font-family: var(--font-head);
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            color: var(--gold-thread);
+            text-transform: uppercase;
+        }
+
+        /* --- FOOTER --- */
+        .footer-simple {
+            padding: 80px;
+            background: var(--ink);
+            color: var(--vellum);
+            text-align: center;
+        }
+
+        .footer-seal {
+            font-family: var(--font-head);
+            font-size: 3rem;
+            margin-bottom: 40px;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            font-family: var(--font-head);
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+        }
+
+        .footer-nav a:hover { color: var(--gold-thread); }
+
+        /* --- MOBILE --- */
+        @media (max-width: 1024px) {
+            .chancery-layout { grid-template-columns: 1fr; }
+            .sidebar-panel { 
+                height: auto; 
+                position: relative; 
+                border-right: none; 
+                border-bottom: 4px double var(--gold-thread);
+                padding: 40px 20px;
+            }
+            .hero-header { height: 60vh; padding: 0 40px; }
+            .section-wrapper { grid-template-columns: 40px 1fr; }
+            .section-inner { padding: 60px 20px; }
+            .docket-grid, .portrait-layout { grid-template-columns: 1fr; flex-direction: column; }
+            .display-title { font-size: 2.5rem; }
+            .portrait-box { width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container nav-flex">
-            <div class="brand">
-                <div class="brand-line"></div>
-                <div class="brand-text">
-                    <span class="uni">NLU DELHI</span>
-                    <span class="centre">Centre for Regulatory Studies</span>
-                </div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#contact" class="btn-nav">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero -->
-    <header class="hero">
-        <div class="container">
-            <h1>Reshaping the <br> Regulatory Architecture.</h1>
-            <p>Bridging the gap between legal theory, economic reality, and public policy in the digital age.</p>
+    <div class="chancery-layout">
+        
+        <!-- SIDEBAR (Fixed Book Cover) -->
+        <aside class="sidebar-panel">
             <div>
-                <a href="#research" class="btn-primary">Our Research</a>
-                <a href="#team" class="btn-secondary">Meet the Team</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Mandate Section -->
-    <section id="about" class="section-padding">
-        <div class="container">
-            <div class="mandate-grid">
-                <div class="mandate-text">
-                    <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">Our Mandate</h2>
-                    <p>The Centre for Regulatory Studies (CRS) was established to engage with the emerging regulatory landscape in India. We operate at the intersection of <strong>administrative law, constitutional theory, and economic policy</strong>.</p>
-                    <p>In an era of rapid legislative changes, the Centre serves as a bridge between the judiciary, the executive, and the academy. Our mission is to provide doctrinal clarity to complex regulatory challenges ranging from Insolvency to Digital Governance.</p>
+                <div class="brand-block">
+                    <span class="brand-sub">National Law University Delhi</span>
+                    <h1 class="brand-main">Centre for<br>Regulatory<br>Studies</h1>
                 </div>
-                <div class="mandate-stats">
-                    <!-- Simple stats visual -->
-                    <div class="research-card" style="text-align: center;">
-                        <i class="fas fa-book-journal-whills research-icon"></i>
-                        <h3>Law, Economics & Policy Review</h3>
-                        <p style="color: var(--text-light);">Our flagship peer-reviewed journal.</p>
+                
+                <nav class="nav-vertical">
+                    <a href="#mandate" class="nav-item">Mandate</a>
+                    <a href="#intelligence" class="nav-item">Intelligence</a>
+                    <a href="#directors" class="nav-item">Directorship</a>
+                    <a href="#contact" class="nav-item">Correspondence</a>
+                </nav>
+            </div>
+
+            <div class="sidebar-footer">
+                Est. 2015 <br> New Delhi, India
+            </div>
+        </aside>
+
+        <!-- CONTENT SCROLL -->
+        <main class="content-panel">
+            
+            <!-- HERO -->
+            <header class="hero-header">
+                <div>
+                    <span class="section-marker">The Doctrinal Observatory</span>
+                    <h2 class="display-title">
+                        Constructing the <br>
+                        <i style="color: var(--oxblood);">Administrative State</i> <br>
+                        in the Age of Algorithms.
+                    </h2>
+                </div>
+                <div class="scroll-hint">Scroll to Proceed</div>
+            </header>
+
+            <!-- MANDATE SECTION -->
+            <section id="mandate" class="section-wrapper">
+                <div class="vertical-label">01 / Mission</div>
+                <div class="section-inner">
+                    <p class="lead-paragraph">
+                        Law moves slowly; markets move fast. We exist in that friction. CRS serves as the bridge between legal theory and economic reality, providing the intellectual scaffolding for India's evolving regulatory framework.
+                    </p>
+                    
+                    <div style="display: flex; gap: 60px; margin-top: 60px; border-top: 1px solid var(--line-color); padding-top: 40px;">
+                        <div>
+                            <div class="meta-data">Focus Area I</div>
+                            <h3 style="font-size: 1.5rem; margin-top: 10px;">Insolvency</h3>
+                        </div>
+                        <div>
+                            <div class="meta-data">Focus Area II</div>
+                            <h3 style="font-size: 1.5rem; margin-top: 10px;">Competition</h3>
+                        </div>
+                        <div>
+                            <div class="meta-data">Focus Area III</div>
+                            <h3 style="font-size: 1.5rem; margin-top: 10px;">Digital Rights</h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Research Areas -->
-    <section id="research" class="section-padding" style="background: #f1f5f9;">
-        <div class="container">
-            <h2 class="section-title">Research Focus</h2>
-            <div class="research-grid">
-                <!-- Card 1 -->
-                <div class="research-card">
-                    <i class="fas fa-gavel research-icon"></i>
-                    <h3 class="research-title">Insolvency & Bankruptcy</h3>
-                    <p>Analyzing the evolving jurisprudence of the IBC, creditor rights, and cross-border insolvency frameworks.</p>
-                </div>
-                <!-- Card 2 -->
-                <div class="research-card">
-                    <i class="fas fa-gamepad research-icon"></i>
-                    <h3 class="research-title">Gaming & Digital Law</h3>
-                    <p>Examining the intersection of skill-based gaming, taxation, and constitutional protections in the digital economy.</p>
-                </div>
-                <!-- Card 3 -->
-                <div class="research-card">
-                    <i class="fas fa-chart-line research-icon"></i>
-                    <h3 class="research-title">Competition Policy</h3>
-                    <p>Understanding market structures, antitrust enforcement, and consumer welfare in India's growing markets.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <!-- INTELLIGENCE SECTION -->
+            <section id="intelligence" class="section-wrapper">
+                <div class="vertical-label">02 / Docket</div>
+                <div class="section-inner">
+                    <div class="docket-grid">
+                        
+                        <!-- Item 1 -->
+                        <article class="docket-card">
+                            <span class="card-type">Report / 2025</span>
+                            <h3 class="card-title">Gaming The System: A Constitutional Test</h3>
+                            <p class="card-excerpt">Establishing a three-tier regulatory structure for skill-based online gaming.</p>
+                            <a href="#" class="btn-link">Access Document</a>
+                        </article>
 
-    <!-- Team Section -->
-    <section id="team" class="section-padding">
-        <div class="container">
-            <h2 class="section-title">Leadership & Team</h2>
-            
-            <!-- Leadership Row -->
-            <div class="team-grid" style="margin-bottom: 3rem;">
-                <div class="team-card">
-                    <div class="team-avatar"><i class="fas fa-user-tie"></i></div>
-                    <h3 class="team-name">Prof. (Dr.) G.S. Bajpai</h3>
-                    <span class="team-role">Chief Patron & Vice Chancellor</span>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar"><i class="fas fa-user-graduate"></i></div>
-                    <h3 class="team-name">Dr. Raghav Pandey</h3>
-                    <span class="team-role">Centre Coordinator</span>
-                </div>
-            </div>
+                        <!-- Item 2 -->
+                        <article class="docket-card">
+                            <span class="card-type">Consultation</span>
+                            <h3 class="card-title">Group Insolvency Framework</h3>
+                            <p class="card-excerpt">Response to the IBBI discussion paper on corporate group resolution.</p>
+                            <a href="#" class="btn-link">Access Document</a>
+                        </article>
 
-            <!-- Student Fellows (Ready to Edit) -->
-            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--text-light); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px;">Research Fellows</h3>
-            <div class="team-grid">
-                <!-- Student 1 -->
-                <div class="team-card" style="border-top-color: #cbd5e1;">
-                    <div class="team-avatar"><i class="fas fa-user"></i></div>
-                    <h3 class="team-name">Student Name</h3>
-                    <span class="team-role">Research Fellow</span>
-                </div>
-                <!-- Student 2 -->
-                <div class="team-card" style="border-top-color: #cbd5e1;">
-                    <div class="team-avatar"><i class="fas fa-user"></i></div>
-                    <h3 class="team-name">Student Name</h3>
-                    <span class="team-role">Research Fellow</span>
-                </div>
-                <!-- Student 3 -->
-                <div class="team-card" style="border-top-color: #cbd5e1;">
-                    <div class="team-avatar"><i class="fas fa-user"></i></div>
-                    <h3 class="team-name">Student Name</h3>
-                    <span class="team-role">Research Fellow</span>
-                </div>
-            </div>
-        </div>
-    </section>
+                        <!-- Item 3 -->
+                        <article class="docket-card">
+                            <span class="card-type">Academic Journal</span>
+                            <h3 class="card-title">LEPR Volume 04: Call for Papers</h3>
+                            <p class="card-excerpt">Inviting doctrinal manuscripts on Digital Public Infrastructure (DPI).</p>
+                            <a href="#" class="btn-link">Submit Manuscript</a>
+                        </article>
 
-    <!-- Footer -->
-    <footer id="contact" class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Centre for Regulatory Studies</h4>
-                    <p style="color: #94a3b8; max-width: 400px;">
-                        Advancing India’s regulatory capacity through teaching, research, and policy engagement.
-                    </p>
+                        <!-- Item 4 -->
+                        <article class="docket-card" style="background: var(--ink); color: var(--vellum);">
+                            <span class="card-type" style="color: var(--gold-thread);">Fellowship</span>
+                            <h3 class="card-title">Join the Research Cohort</h3>
+                            <p class="card-excerpt" style="color: rgba(242, 240, 233, 0.7);">Applications open for Research Fellow positions.</p>
+                            <a href="#" class="btn-link" style="border-color: var(--vellum);">Apply Now</a>
+                        </article>
+
+                    </div>
                 </div>
-                <div class="footer-col footer-contact">
-                    <h4>Contact Us</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Sector 14, Dwarka, New Delhi - 110078</p>
-                    <p><i class="fas fa-envelope"></i> crs@nludelhi.ac.in</p>
-                    <p><i class="fas fa-phone"></i> +91-11-28034257</p>
+            </section>
+
+            <!-- DIRECTORS SECTION -->
+            <section id="directors" class="section-wrapper">
+                <div class="vertical-label">03 / Architects</div>
+                <div class="section-inner">
+                    <div class="portrait-layout">
+                        
+                        <!-- Person 1 -->
+                        <div class="portrait-box">
+                            <div class="img-frame">
+                                <img src="https://ui-avatars.com/api/?name=G+S&background=1A1A1A&color=fff&size=500" alt="VC">
+                            </div>
+                            <h3 class="person-name">Prof. G.S. Bajpai</h3>
+                            <span class="person-role">Chief Patron & Vice Chancellor</span>
+                            <p style="margin-top: 15px; color: #555;">Steering the Centre's vision towards high-impact policy interventions.</p>
+                        </div>
+
+                        <!-- Person 2 -->
+                        <div class="portrait-box">
+                            <div class="img-frame">
+                                <img src="https://ui-avatars.com/api/?name=R+P&background=781C1C&color=fff&size=500" alt="Coord">
+                            </div>
+                            <h3 class="person-name">Dr. Raghav Pandey</h3>
+                            <span class="person-role">Centre Coordinator</span>
+                            <p style="margin-top: 15px; color: #555;">Associate Professor specializing in Insolvency and Constitutional Theory.</p>
+                        </div>
+
+                    </div>
                 </div>
-            </div>
-            <div class="copyright">
-                &copy; 2026 Centre for Regulatory Studies. All rights reserved.
-            </div>
-        </div>
-    </footer>
+            </section>
+
+            <!-- FOOTER -->
+            <footer id="contact" class="footer-simple">
+                <h2 class="footer-seal">CRS.</h2>
+                <div class="footer-nav">
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="mailto:crs@nludelhi.ac.in">Email Us</a>
+                </div>
+                <p style="opacity: 0.5; font-size: 0.9rem;">
+                    Sector 14, Dwarka, New Delhi 110078 <br>
+                    &copy; 2026 Centre for Regulatory Studies
+                </p>
+            </footer>
+
+        </main>
+    </div>
 
 </body>
 </html>
