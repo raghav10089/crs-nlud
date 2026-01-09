@@ -51,7 +51,7 @@
         }
 
         .display-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2rem, 5vw, 4rem);
             line-height: 1.1;
             letter-spacing: 0.02em;
             margin-bottom: 30px;
@@ -165,6 +165,7 @@
         /* --- THE SCROLLING CONTENT --- */
         .content-panel {
             background: var(--vellum);
+            width: 100%;
         }
 
         /* --- HERO HEADER --- */
@@ -209,6 +210,7 @@
             text-transform: uppercase;
             background: rgba(0,0,0,0.02);
             color: var(--oxblood);
+            height: auto;
         }
 
         .section-inner {
@@ -333,22 +335,112 @@
 
         .footer-nav a:hover { color: var(--gold-thread); }
 
-        /* --- MOBILE --- */
+        /* =========================================
+           MOBILE OPTIMIZATION (BREAKPOINT: 1024px)
+           ========================================= */
         @media (max-width: 1024px) {
-            .chancery-layout { grid-template-columns: 1fr; }
-            .sidebar-panel { 
-                height: auto; 
-                position: relative; 
-                border-right: none; 
+            
+            /* Reset Grid to Stack */
+            .chancery-layout {
+                display: block; /* No grid on mobile */
+            }
+
+            /* Sidebar becomes Top Header */
+            .sidebar-panel {
+                height: auto;
+                position: relative;
+                width: 100%;
+                border-right: none;
                 border-bottom: 4px double var(--gold-thread);
                 padding: 40px 20px;
+                text-align: center;
             }
-            .hero-header { height: 60vh; padding: 0 40px; }
-            .section-wrapper { grid-template-columns: 40px 1fr; }
-            .section-inner { padding: 60px 20px; }
-            .docket-grid, .portrait-layout { grid-template-columns: 1fr; flex-direction: column; }
-            .display-title { font-size: 2.5rem; }
+
+            .brand-block {
+                border-bottom: none;
+                padding-bottom: 10px;
+            }
+
+            .brand-main { font-size: 1.8rem; }
+            
+            /* Nav becomes Horizontal Row */
+            .nav-vertical {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+                margin-top: 20px;
+            }
+
+            .nav-item { font-size: 0.8rem; }
+            .sidebar-footer { display: none; } /* Hide footer metadata to save space */
+
+            /* Hero Adjustments */
+            .hero-header {
+                height: auto;
+                min-height: 60vh;
+                padding: 60px 20px;
+                text-align: center;
+            }
+            
+            .display-title { font-size: 2rem; }
+            .section-marker { margin: 0 auto 20px auto; }
+            .scroll-hint { display: none; }
+
+            /* Content Sections */
+            .section-wrapper {
+                display: block; /* Stack label on top of content */
+                border-bottom: 1px solid var(--line-color);
+            }
+
+            /* Convert Vertical Label to Horizontal Banner */
+            .vertical-label {
+                writing-mode: horizontal-tb;
+                transform: none;
+                border-right: none;
+                border-bottom: 1px solid var(--line-color);
+                width: 100%;
+                padding: 15px 0;
+                height: auto;
+                display: block;
+            }
+
+            .section-inner {
+                padding: 50px 20px; /* Reduced side padding */
+            }
+
+            /* Grid Fixes */
+            .docket-grid {
+                grid-template-columns: 1fr; /* Stack cards */
+                gap: 40px;
+            }
+            
+            .docket-card { padding: 30px 20px; }
+
+            .portrait-layout {
+                flex-direction: column;
+                gap: 50px;
+            }
+
             .portrait-box { width: 100%; }
+            .img-frame { height: auto; aspect-ratio: 1/1; }
+
+            /* Footer */
+            .footer-simple { padding: 60px 20px; }
+            .footer-nav { flex-direction: column; gap: 20px; }
+            
+            /* Text Sizing */
+            .lead-paragraph {
+                font-size: 1.2rem;
+                max-width: 100%;
+                text-align: left;
+            }
+            
+            .meta-data-row {
+                flex-direction: column;
+                gap: 30px !important;
+                margin-top: 40px !important;
+            }
         }
     </style>
 </head>
@@ -382,7 +474,7 @@
             
             <!-- HERO -->
             <header class="hero-header">
-                <div>
+                <div style="width: 100%;">
                     <span class="section-marker">The Doctrinal Observatory</span>
                     <h2 class="display-title">
                         Constructing the <br>
@@ -401,7 +493,7 @@
                         Law moves slowly; markets move fast. We exist in that friction. CRS serves as the bridge between legal theory and economic reality, providing the intellectual scaffolding for India's evolving regulatory framework.
                     </p>
                     
-                    <div style="display: flex; gap: 60px; margin-top: 60px; border-top: 1px solid var(--line-color); padding-top: 40px;">
+                    <div class="meta-data-row" style="display: flex; gap: 60px; margin-top: 60px; border-top: 1px solid var(--line-color); padding-top: 40px;">
                         <div>
                             <div class="meta-data">Focus Area I</div>
                             <h3 style="font-size: 1.5rem; margin-top: 10px;">Insolvency</h3>
