@@ -44,15 +44,15 @@
         img { display: block; width: 100%; }
 
         /* --- TYPOGRAPHY --- */
-        h1, h2, h3, h4 {
+        h1, h2, h3, h4, h5 {
             font-family: var(--font-head);
             font-weight: 400;
             text-transform: uppercase;
         }
 
         .display-title {
-            font-size: clamp(2rem, 5vw, 4rem);
-            line-height: 1.1;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            line-height: 1.2;
             letter-spacing: 0.02em;
             margin-bottom: 30px;
             color: var(--ink);
@@ -73,10 +73,11 @@
 
         .lead-paragraph {
             font-size: 1.3rem;
-            line-height: 1.5;
+            line-height: 1.6;
             max-width: 95%;
             margin-bottom: 30px;
             color: #333;
+            font-weight: 500;
         }
 
         .body-text {
@@ -114,6 +115,7 @@
             justify-content: space-between;
             border-right: 4px double var(--gold-thread);
             z-index: 100;
+            overflow-y: auto; /* Allow scrolling if menu is tall */
         }
 
         .brand-block {
@@ -168,6 +170,7 @@
             font-size: 0.7rem;
             opacity: 0.4;
             letter-spacing: 0.1em;
+            margin-top: 40px;
         }
 
         /* --- THE SCROLLING CONTENT --- */
@@ -178,14 +181,23 @@
 
         /* --- HERO HEADER --- */
         .hero-header {
-            height: 90vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
-            padding: 0 80px;
+            padding: 80px;
             border-bottom: 1px solid var(--line-color);
             position: relative;
             background-image: radial-gradient(var(--line-color) 1px, transparent 0);
             background-size: 40px 40px; /* Dot grid pattern */
+            /* Add hero image if available, else keep pattern */
+            /* background: url('images/hero_image.jpg') no-repeat center/cover; */
+        }
+
+        .hero-overlay {
+            background: rgba(242, 240, 233, 0.9);
+            padding: 40px;
+            border: 1px solid var(--line-color);
+            max-width: 900px;
         }
 
         .scroll-hint {
@@ -259,7 +271,7 @@
         }
 
         .card-title {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             line-height: 1.2;
             margin-bottom: 15px;
             font-weight: 500;
@@ -280,6 +292,62 @@
             text-transform: uppercase;
             width: fit-content;
         }
+
+        /* --- PUBLICATION LIST --- */
+        .pub-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+        .pub-item {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--line-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .pub-date {
+            font-family: var(--font-head);
+            font-size: 0.8rem;
+            color: var(--oxblood);
+            min-width: 100px;
+        }
+        .pub-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            flex-grow: 1;
+        }
+        .pub-source {
+            font-style: italic;
+            color: #666;
+        }
+
+        /* --- EDITORIAL TEAM BOX --- */
+        .editorial-box {
+            background: #fff;
+            border: 1px solid var(--line-color);
+            padding: 40px;
+            margin-top: 40px;
+        }
+        .team-grid-text {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        .team-list-group h5 {
+            font-size: 0.9rem;
+            color: var(--oxblood);
+            margin-bottom: 10px;
+            letter-spacing: 0.1em;
+        }
+        .team-list-group ul {
+            list-style: none;
+            font-size: 0.95rem;
+            color: #444;
+        }
+        .team-list-group li { margin-bottom: 5px; }
 
         /* --- PORTRAITS --- */
         .portrait-layout {
@@ -367,6 +435,7 @@
                 border-bottom: 4px double var(--gold-thread);
                 padding: 40px 20px;
                 text-align: center;
+                overflow: visible;
             }
 
             .brand-block {
@@ -395,8 +464,9 @@
                 padding: 60px 20px;
                 text-align: center;
             }
+            .hero-overlay { padding: 20px; }
             
-            .display-title { font-size: 2rem; }
+            .display-title { font-size: 1.8rem; }
             .section-marker { margin: 0 auto 20px auto; }
             .scroll-hint { display: none; }
 
@@ -432,6 +502,8 @@
                 flex-direction: column;
                 gap: 50px;
             }
+            
+            .team-grid-text { grid-template-columns: 1fr; }
 
             .portrait-box { width: 100%; }
             .img-frame { height: auto; aspect-ratio: 1/1; }
@@ -449,7 +521,7 @@
             
             .meta-data-row {
                 flex-direction: column;
-                gap: 30px !important;
+                gap: 20px !important;
                 margin-top: 40px !important;
             }
         }
@@ -487,13 +559,16 @@
             
             <!-- HERO -->
             <header class="hero-header">
-                <div style="width: 100%;">
+                <div class="hero-overlay">
                     <span class="section-marker">The Doctrinal Observatory</span>
                     <h2 class="display-title">
-                        Bridging the gap between <br>
-                        <i style="color: var(--oxblood);">Legal Theory</i> <br>
-                        and Economic Realities.
+                        Building the capacity to <br>
+                        <i style="color: var(--oxblood);">Govern</i> <br>
+                        the markets of tomorrow.
                     </h2>
+                    <p class="lead-paragraph" style="font-size: 1.1rem; max-width: 600px;">
+                        Bridging the gap between legal theory and market economy. An interdisciplinary approach for tomorrow’s regulatory challenges.
+                    </p>
                 </div>
                 <div class="scroll-hint">Scroll to Proceed</div>
             </header>
@@ -503,10 +578,16 @@
                 <div class="vertical-label">01 / Mission</div>
                 <div class="section-inner">
                     <p class="lead-paragraph">
-                        The Centre for Regulatory Studies (CRS) at National Law University, Delhi was established to address a critical national shortcoming: building the human and institutional capacity required to operationalise economic freedom through sound regulation.
+                        The Centre for Regulatory Studies (CRS) at National Law University, Delhi was established to address a critical national shortcoming that has persisted despite over three decades of economic reforms: insufficient attention to building the human and institutional capacity required to operationalise economic freedom through sound regulation.
                     </p>
                     <p class="body-text">
-                        Recognising that effective regulation lies at the intersection of law, economics, management, and behavioural sciences, the Centre seeks to create an integrated intellectual framework that goes beyond traditional doctrinal approaches. Its mission is to deepen understanding of regulatory design, governance, and implementation.
+                        The CRS was founded under the visionary leadership of <strong>Dr. M. S. Sahoo</strong>, former Chairperson of the Insolvency and Bankruptcy Board of India, whose pioneering contributions laid the foundation for the Centre. This legacy is presently carried forward under the leadership of Dr. Raghav Pandey, with a renewed focus on academic depth, policy relevance, and institutional impact.
+                    </p>
+                    <p class="body-text">
+                        The Centre draws strength from the University’s distinguished faculty, who are deeply engaged in cutting-edge teaching, research, and publication in corporate and business laws, including competition, securities, and insolvency regulation.
+                    </p>
+                    <p class="body-text">
+                        Functioning as a comprehensive platform for regulatory engagement, the Centre undertakes research through PhD programmes, fellowships, and sponsored projects; delivers education through courses of varying duration; and conducts outreach through seminars and workshops. In the short term, the Centre proposes specialised certification programmes for senior regulatory functionaries and a one-year executive programme for mid-career officers. In the long term, it aims to launch a two-year postgraduate programme in regulation and compliance.
                     </p>
                     
                     <div class="meta-data-row" style="display: flex; gap: 40px; margin-top: 50px; border-top: 1px solid var(--line-color); padding-top: 30px; flex-wrap: wrap;">
@@ -526,6 +607,14 @@
                             <div class="meta-data">Focus Area</div>
                             <h3 style="font-size: 1.3rem; margin-top: 5px;">Jurimetrics</h3>
                         </div>
+                        <div>
+                            <div class="meta-data">Focus Area</div>
+                            <h3 style="font-size: 1.3rem; margin-top: 5px;">Financial Regs</h3>
+                        </div>
+                        <div>
+                            <div class="meta-data">Focus Area</div>
+                            <h3 style="font-size: 1.3rem; margin-top: 5px;">Public Policy</h3>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -537,19 +626,64 @@
                     <span class="section-marker">Law Economic and Policy Review</span>
                     <h2 class="display-title" style="font-size: 2.5rem; margin-bottom: 20px;">Volume I: Sept 2026</h2>
                     <p class="body-text" style="font-size: 1.2rem;">
-                        Institutions make or break a nation’s path to prosperity. Through LEPR, we seek to promote interdisciplinary research on institutions to develop a better functioning state machinery. We seek submissions from Professionals, Academicians, Policymakers, and Researchers.
+                        Institutions make or break a nation’s path to prosperity. Through LEPR, we seek to promote interdisciplinary research on institutions to develop a better functioning state machinery for tomorrow. We seek submissions from Professionals, Academicians, Policymakers, Researchers and students on the intersection of Law, Economics and Policy.
                     </p>
 
                     <div style="background: white; border: 1px solid var(--line-color); padding: 40px; margin-top: 40px;">
                         <h4 style="color: var(--oxblood); margin-bottom: 20px;">Submission Guidelines</h4>
-                        <ul style="list-style-type: disc; padding-left: 20px; color: #444; font-family: var(--font-head); font-size: 0.9rem; line-height: 1.8;">
+                        <ul style="list-style-type: none; padding-left: 0; color: #444; font-family: var(--font-head); font-size: 0.95rem; line-height: 1.8;">
                             <li><strong>Deadline:</strong> 15th March, 2026</li>
-                            <li><strong>Length:</strong> 4,000 - 10,000 words</li>
-                            <li><strong>Style:</strong> OSCOLA (4th Edition)</li>
-                            <li><strong>Format:</strong> Microsoft Word (.doc/.docx)</li>
+                            <li><strong>Length:</strong> 4,000 - 10,000 words (exclusive of abstract/footnotes).</li>
+                            <li><strong>Abstract:</strong> Max 500 words.</li>
+                            <li><strong>Citation:</strong> OSCOLA (4th Edition).</li>
+                            <li><strong>Originality:</strong> Unpublished works only. Similarity score < 15%.</li>
+                            <li><strong>Format:</strong> Microsoft Word (.doc/.docx).</li>
                         </ul>
+                        
+                        <h4 style="color: var(--oxblood); margin-top: 30px; margin-bottom: 20px;">Formatting Guidelines</h4>
+                        <ul style="list-style-type: none; padding-left: 0; color: #444; font-family: var(--font-head); font-size: 0.95rem; line-height: 1.8;">
+                            <li><strong>Font:</strong> Garamond.</li>
+                            <li><strong>Size:</strong> 16 (Headings); 12 (Sub-headings and Body Text).</li>
+                            <li><strong>Alignment:</strong> Level 1 (Centre/Small Caps), Level 2 (Left/Bold), Level 3 (Left/Underlined).</li>
+                            <li><strong>Line Spacing:</strong> 1.5.</li>
+                            <li><strong>Margins:</strong> 1 inch on all sides (A4).</li>
+                            <li><strong>Footnotes:</strong> Garamond, Size 10, Spacing 6 pt.</li>
+                        </ul>
+
                         <div style="margin-top: 30px;">
                             <a href="mailto:crs_research@nludelhi.ac.in" class="btn-link">Submit Manuscript via Email</a>
+                        </div>
+                    </div>
+
+                    <!-- EDITORIAL TEAM -->
+                    <div class="editorial-box">
+                        <span class="card-type">Editorial Board</span>
+                        <div class="team-grid-text">
+                            <div class="team-list-group">
+                                <h5>Editor in Chief</h5>
+                                <ul><li>Dr. Raghav Pandey</li></ul>
+                                <h5 style="margin-top: 20px;">Managing Editor</h5>
+                                <ul><li>Manas Mahajan</li></ul>
+                                <h5 style="margin-top: 20px;">Lead Editor</h5>
+                                <ul><li>Kashish Jumani</li></ul>
+                            </div>
+                            <div class="team-list-group">
+                                <h5>Senior Editors</h5>
+                                <ul>
+                                    <li>Kshitij Malhotra, Skand K. Nath</li>
+                                    <li>Ayush Mhatre, Vibhakar Mittal, Vidushi</li>
+                                </ul>
+                                <h5 style="margin-top: 20px;">Associate Editors</h5>
+                                <ul>
+                                    <li>Arshiya Gupta, Arshia Singla</li>
+                                    <li>Aditri Sen, Anoushka Suhane</li>
+                                </ul>
+                                <h5 style="margin-top: 20px;">Assistant Editors</h5>
+                                <ul>
+                                    <li>Aadya Mital, Aravya Gupta</li>
+                                    <li>Nandita Matolli, Nitya Singhania, Aashay Desai</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -559,41 +693,91 @@
             <section id="research" class="section-wrapper">
                 <div class="vertical-label">03 / Docket</div>
                 <div class="section-inner">
-                    <span class="section-marker">Recent Intelligence</span>
-                    <div class="docket-grid">
-                        
-                        <!-- Item 1 -->
-                        <article class="docket-card">
-                            <span class="card-type">Project</span>
-                            <h3 class="card-title">EGF-E Gaming Research</h3>
-                            <p class="card-excerpt">Partnered with the E-Gaming Federation (EGF) to develop a principles-based approach to the regulation of E-Gaming in India.</p>
-                        </article>
+                    <span class="section-marker">Research & Intelligence</span>
+                    <p class="body-text" style="margin-bottom: 40px;">
+                        CRS contributes to evidence-based regulatory discourse through journals, working papers, policy notes, issue briefs, and commentaries.
+                    </p>
 
-                        <!-- Item 2 -->
-                        <article class="docket-card">
-                            <span class="card-type">Editorial / Jan 2026</span>
-                            <h3 class="card-title">Cost of Business Failure</h3>
-                            <p class="card-excerpt">"Section 29A and the cost of treating business failure as misconduct" - Business Standard.</p>
-                            <a href="#" class="btn-link">Read Article</a>
-                        </article>
-
-                        <!-- Item 3 -->
-                        <article class="docket-card">
-                            <span class="card-type">Editorial / Nov 2025</span>
-                            <h3 class="card-title">Insolvency Delays</h3>
-                            <p class="card-excerpt">"Decade-long delay in insolvency protections leaves families vulnerable" - Business Standard.</p>
-                            <a href="#" class="btn-link">Read Article</a>
-                        </article>
-
-                        <!-- Item 4 -->
-                        <article class="docket-card">
-                            <span class="card-type">Research Paper / Oct 2024</span>
-                            <h3 class="card-title">Climate Change & Insolvency</h3>
-                            <p class="card-excerpt">Thought Paper on Climate Change and Insolvency in India - Insolvency Law Academy.</p>
-                            <a href="#" class="btn-link">Download Paper</a>
-                        </article>
-
+                    <h4 style="margin-bottom: 20px;">Featured Project</h4>
+                    <div style="background: white; border: 1px solid var(--line-color); padding: 30px; margin-bottom: 50px;">
+                        <h3 class="card-title">EGF-E Gaming Research</h3>
+                        <p class="card-excerpt">
+                            The Centre has partnered with the E-Gaming Federation (EGF) to contribute to research, knowledge development, and policy analysis for developing a principles-based approach to the regulation of E-Gaming in India.
+                        </p>
                     </div>
+
+                    <h4 style="margin-bottom: 20px;">Books & Chapters</h4>
+                    <ul class="pub-list">
+                        <li class="pub-item">
+                            <span class="pub-date">2021</span>
+                            <span class="pub-title">The Law of Corporate Insolvency in India: Resolution and Liquidation</span>
+                            <span class="pub-source">Thomson Reuters (Book)</span>
+                        </li>
+                        <li class="pub-item">
+                            <span class="pub-date">2021</span>
+                            <span class="pub-title">Examining Matrimonial Personal Laws in India from a lens of Feminist Jurisprudence</span>
+                            <span class="pub-source">Thomson Reuters (Chapter)</span>
+                        </li>
+                        <li class="pub-item">
+                            <span class="pub-date">2020</span>
+                            <span class="pub-title">"Criminal Tribes to Habitual Offenders: A Change in name, Not in Spirit"</span>
+                            <span class="pub-source">Thomson Reuters (Chapter)</span>
+                        </li>
+                    </ul>
+
+                    <h4 style="margin-bottom: 20px; margin-top: 40px;">Editorials & Articles</h4>
+                    <ul class="pub-list">
+                        <li class="pub-item">
+                            <span class="pub-date">Jan 07, 2026</span>
+                            <span class="pub-title">Section 29A and the cost of treating business failure as misconduct</span>
+                            <span class="pub-source">Business Standard</span>
+                        </li>
+                        <li class="pub-item">
+                            <span class="pub-date">Nov 17, 2025</span>
+                            <span class="pub-title">Decade-long delay in insolvency protections leaves families vulnerable</span>
+                            <span class="pub-source">Business Standard</span>
+                        </li>
+                        <li class="pub-item">
+                            <span class="pub-date">Nov 11, 2024</span>
+                            <span class="pub-title">Insolvency law must protect homebuyers, avoid complex resolution process</span>
+                            <span class="pub-source">Business Standard</span>
+                        </li>
+                        <li class="pub-item">
+                            <span class="pub-date">Oct 2024</span>
+                            <span class="pub-title">Thought Paper on Climate Change and Insolvency in India</span>
+                            <span class="pub-source">Insolvency Law Academy</span>
+                        </li>
+                        <li class="pub-item">
+                            <span class="pub-date">2024</span>
+                            <span class="pub-title">Real Estate Insolvency and the IBC</span>
+                            <span class="pub-source">Prime Database</span>
+                        </li>
+                        <li class="pub-item">
+                            <span class="pub-date">Oct 10, 2023</span>
+                            <span class="pub-title">India's insolvency assessment has a yawning gap</span>
+                            <span class="pub-source">Deccan Herald</span>
+                        </li>
+                        <li class="pub-item">
+                            <span class="pub-date">Aug 29, 2023</span>
+                            <span class="pub-title">Questioning priority: Govt dues in IBC</span>
+                            <span class="pub-source">Business Standard</span>
+                        </li>
+                        <li class="pub-item">
+                            <span class="pub-date">July 24, 2023</span>
+                            <span class="pub-title">Avoidance Transactions</span>
+                            <span class="pub-source">NLS Business Law Review Blog</span>
+                        </li>
+                        <li class="pub-item">
+                            <span class="pub-date">2023</span>
+                            <span class="pub-title">The Non-Performing Assets and their fate under the IBC</span>
+                            <span class="pub-source">Prime Database</span>
+                        </li>
+                        <li class="pub-item">
+                            <span class="pub-date">Oct 24, 2020</span>
+                            <span class="pub-title">"Immunity of international organisations is no free pass"</span>
+                            <span class="pub-source">Hindu Businessline</span>
+                        </li>
+                    </ul>
                 </div>
             </section>
 
@@ -605,14 +789,25 @@
                     <div style="background: var(--ink); color: var(--vellum); padding: 50px;">
                         <h3 style="font-size: 2rem; color: var(--gold-thread); margin-bottom: 20px;">PGIP LLM Program</h3>
                         <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px;">
-                            The two-year Post Graduate Insolvency Programme (PGIP) is a specialised academic programme offered by NLUD. It offers a structured pathway to becoming an Insolvency Professional (IP) with just 2 years of experience instead of the mandated 10-15 years.
+                            The two-year Post Graduate Insolvency Programme (PGIP) – MA/LLM is a specialised academic programme in insolvency and restructuring offered by NLUD. The PGIP Certification is issued and authorised by the Insolvency and Bankruptcy Board of India (IBBI).
                         </p>
-                        <ul style="list-style: none; margin-bottom: 40px; opacity: 0.8; font-family: var(--font-head); font-size: 0.9rem;">
-                            <li style="margin-bottom: 10px;">&bull; Certification by IBBI & NLUD</li>
-                            <li style="margin-bottom: 10px;">&bull; 1 year classroom + 1 year internship</li>
-                            <li style="margin-bottom: 10px;">&bull; Selection via All India Entrance Test (AIET)</li>
+                        
+                        <h5 style="color: var(--gold-thread); margin-bottom: 15px;">Program Highlights</h5>
+                        <ul style="list-style: none; margin-bottom: 30px; opacity: 0.8; font-family: var(--font-head); font-size: 0.9rem;">
+                            <li style="margin-bottom: 10px;">&bull; Structured pathway to becoming an Insolvency Professional (IP).</li>
+                            <li style="margin-bottom: 10px;">&bull; Reduces experience requirement from 10–15 years to 2 years.</li>
+                            <li style="margin-bottom: 10px;">&bull; Curriculum integrates legal, financial, and practical training through case-based teaching and workshops.</li>
+                            <li style="margin-bottom: 10px;">&bull; Classroom instruction and internship follow UGC and IBBI-prescribed guidelines.</li>
                         </ul>
-                        <a href="#" class="btn-link" style="border-color: var(--vellum);">View Syllabus</a>
+
+                        <h5 style="color: var(--gold-thread); margin-bottom: 15px;">Eligibility Requirements</h5>
+                        <ul style="list-style: none; margin-bottom: 30px; opacity: 0.8; font-family: var(--font-head); font-size: 0.9rem;">
+                            <li style="margin-bottom: 10px;">&bull; <strong>Selection:</strong> Solely based on All India Entrance Test (AIET).</li>
+                            <li style="margin-bottom: 10px;">&bull; <strong>Education:</strong> Professional courses (CS, CA, Cost Accountancy, Law) OR Bachelor’s in Technology/Engineering OR Post-graduate in Economics, Finance, Commerce, Management or Insolvency (min 50% marks).</li>
+                            <li style="margin-bottom: 10px;">&bull; <strong>Age Limit:</strong> Maximum 28 years.</li>
+                            <li style="margin-bottom: 10px;">&bull; <strong>Note:</strong> Candidates appearing/awaiting results can apply, subject to eligibility by cut-off date.</li>
+                        </ul>
+                        <a href="https://nludelhi.ac.in" class="btn-link" style="border-color: var(--vellum);">View Brochure</a>
                     </div>
                 </div>
             </section>
@@ -630,8 +825,8 @@
                             </div>
                             <h3 class="person-name">Prof. (Dr.) G.S. Bajpai</h3>
                             <span class="person-role">Chief Patron & Vice Chancellor</span>
-                            <p style="margin-top: 15px; color: #555; font-size: 0.95rem;">
-                                A prolific author and former Vice-Chancellor of RGNUL, Prof. Bajpai brings over three decades of academic experience. He has authored twenty-two books and over fifty papers.
+                            <p style="margin-top: 15px; color: #555; font-size: 0.95rem; text-align: justify;">
+                                Professor (Dr.) G.S. Bajpai brings over three decades of academic and administrative experience to the Centre for Regulatory Studies. A prolific author and former Vice-Chancellor of RGNUL, he actively supports interdisciplinary research, empirical scholarship, regulatory capacity-building, and policy-oriented academic initiatives at the Centre. Prof. Bajpai has authored twenty-two books/monographs; more than fifty papers; more than ninety op-eds in leading dailies like Indian Express, the Hindu, and the Tribune and thirteen project reports.
                             </p>
                         </div>
 
@@ -642,8 +837,8 @@
                             </div>
                             <h3 class="person-name">Dr. Raghav Pandey</h3>
                             <span class="person-role">Centre Coordinator</span>
-                            <p style="margin-top: 15px; color: #555; font-size: 0.95rem;">
-                                Author of "The Law of Corporate Insolvency in India". He holds a Ph.D. in Insolvency Law from IIT Bombay and previously served as Assistant Professor at MNLU Mumbai.
+                            <p style="margin-top: 15px; color: #555; font-size: 0.95rem; text-align: justify;">
+                                Dr. Raghav Pandey holds a Ph.D. in Insolvency Law from IIT Bombay, an LL.M. from the Indian Law Institute, and an M.A. (Law) from TISS. Prior to joining NLUD, he served as Assistant Professor at Maharashtra National Law University, Mumbai, and as Visiting Faculty at IIIT Pune. He is the author of The Law of Corporate Insolvency in India: Resolution and Liquidation (Thomson Reuters, 2021) and has published widely in peer-reviewed journals and edited volumes.
                             </p>
                         </div>
 
@@ -659,8 +854,8 @@
                     <a href="mailto:crs_research@nludelhi.ac.in">crs_research@nludelhi.ac.in</a>
                 </div>
                 <p style="opacity: 0.5; font-size: 0.9rem; margin-top: 30px;">
-                    National Law University Delhi, Golf Course Rd,<br>
-                    Sector 14 Dwarka, New Delhi - 110078
+                    National Law University Delhi, Golf Course Rd, Pocket 1,<br>
+                    Sector 14 Dwarka, Dwarka, New Delhi, Delhi, 110078
                 </p>
                 <p style="opacity: 0.3; font-size: 0.7rem; margin-top: 20px;">
                     &copy; 2026 Centre for Regulatory Studies
