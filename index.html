@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRS | NLU Delhi (The Chancery)</title>
+    <title>Centre for Regulatory Studies | NLU Delhi</title>
     <!-- Fonts: Cinzel (Roman Authority), EB Garamond (The Text) -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
@@ -72,10 +72,18 @@
         }
 
         .lead-paragraph {
-            font-size: 1.6rem;
-            line-height: 1.4;
-            max-width: 90%;
-            margin-bottom: 40px;
+            font-size: 1.3rem;
+            line-height: 1.5;
+            max-width: 95%;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .body-text {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #444;
+            text-align: justify;
         }
 
         .meta-data {
@@ -89,7 +97,7 @@
         /* --- LAYOUT ARCHITECTURE (Split Screen) --- */
         .chancery-layout {
             display: grid;
-            grid-template-columns: 400px 1fr; /* Fixed Sidebar | Fluid Content */
+            grid-template-columns: 350px 1fr; /* Fixed Sidebar | Fluid Content */
             min-height: 100vh;
         }
 
@@ -100,7 +108,7 @@
             height: 100vh;
             position: sticky;
             top: 0;
-            padding: 60px 40px;
+            padding: 50px 30px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -110,7 +118,7 @@
 
         .brand-block {
             border-bottom: 1px solid rgba(242, 240, 233, 0.2);
-            padding-bottom: 40px;
+            padding-bottom: 30px;
         }
 
         .brand-sub {
@@ -123,7 +131,7 @@
         }
 
         .brand-main {
-            font-size: 2.2rem;
+            font-size: 2rem;
             line-height: 1.1;
             letter-spacing: 0.05em;
         }
@@ -131,13 +139,13 @@
         .nav-vertical {
             display: flex;
             flex-direction: column;
-            gap: 25px;
-            margin-top: 40px;
+            gap: 20px;
+            margin-top: 30px;
         }
 
         .nav-item {
             font-family: var(--font-head);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 0.1em;
             color: rgba(242, 240, 233, 0.6);
             display: flex;
@@ -153,7 +161,7 @@
         }
 
         .nav-item:hover { color: var(--vellum); }
-        .nav-item:hover::before { width: 20px; }
+        .nav-item:hover::before { width: 15px; }
 
         .sidebar-footer {
             font-family: var(--font-head);
@@ -193,7 +201,7 @@
         /* --- CONTENT SECTIONS --- */
         .section-wrapper {
             display: grid;
-            grid-template-columns: 80px 1fr; /* Vertical Label | Content */
+            grid-template-columns: 60px 1fr; /* Vertical Label | Content */
             border-bottom: 1px solid var(--line-color);
         }
 
@@ -214,22 +222,25 @@
         }
 
         .section-inner {
-            padding: 100px 80px;
+            padding: 80px 60px;
         }
 
         /* --- THE DOCKET (Grid) --- */
         .docket-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 40px;
         }
 
         .docket-card {
             border: 1px solid var(--line-color);
             background: #fff;
-            padding: 40px;
+            padding: 30px;
             box-shadow: 10px 10px 0px rgba(0,0,0,0.05); /* Architectural shadow */
             transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .docket-card:hover {
@@ -248,14 +259,14 @@
         }
 
         .card-title {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             line-height: 1.2;
             margin-bottom: 15px;
             font-weight: 500;
         }
 
         .card-excerpt {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #555;
             margin-bottom: 30px;
         }
@@ -267,12 +278,13 @@
             border-bottom: 1px solid var(--ink);
             padding-bottom: 3px;
             text-transform: uppercase;
+            width: fit-content;
         }
 
         /* --- PORTRAITS --- */
         .portrait-layout {
             display: flex;
-            gap: 60px;
+            gap: 40px;
         }
 
         .portrait-box {
@@ -281,7 +293,7 @@
 
         .img-frame {
             width: 100%;
-            height: 400px;
+            height: 350px;
             border: 1px solid var(--ink);
             padding: 10px;
             margin-bottom: 25px;
@@ -290,14 +302,14 @@
         .img-frame img {
             width: 100%; height: 100%;
             object-fit: cover;
-            filter: grayscale(100%) sepia(20%);
+            filter: grayscale(100%) sepia(10%);
             transition: 0.5s;
         }
 
         .portrait-box:hover img { filter: grayscale(0%); }
 
         .person-name {
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 5px;
             font-weight: 500;
         }
@@ -312,7 +324,7 @@
 
         /* --- FOOTER --- */
         .footer-simple {
-            padding: 80px;
+            padding: 80px 40px;
             background: var(--ink);
             color: var(--vellum);
             text-align: center;
@@ -321,16 +333,17 @@
         .footer-seal {
             font-family: var(--font-head);
             font-size: 3rem;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .footer-nav {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 30px;
             font-family: var(--font-head);
             font-size: 0.8rem;
             letter-spacing: 0.1em;
+            flex-wrap: wrap;
         }
 
         .footer-nav a:hover { color: var(--gold-thread); }
@@ -368,7 +381,7 @@
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 20px;
+                gap: 15px;
                 margin-top: 20px;
             }
 
@@ -415,8 +428,6 @@
                 gap: 40px;
             }
             
-            .docket-card { padding: 30px 20px; }
-
             .portrait-layout {
                 flex-direction: column;
                 gap: 50px;
@@ -458,9 +469,11 @@
                 
                 <nav class="nav-vertical">
                     <a href="#mandate" class="nav-item">Mandate</a>
-                    <a href="#intelligence" class="nav-item">Intelligence</a>
+                    <a href="#journal" class="nav-item">Journal (LEPR)</a>
+                    <a href="#research" class="nav-item">Research</a>
+                    <a href="#courses" class="nav-item">Courses</a>
                     <a href="#directors" class="nav-item">Directorship</a>
-                    <a href="#contact" class="nav-item">Correspondence</a>
+                    <a href="#contact" class="nav-item">Contact</a>
                 </nav>
             </div>
 
@@ -477,9 +490,9 @@
                 <div style="width: 100%;">
                     <span class="section-marker">The Doctrinal Observatory</span>
                     <h2 class="display-title">
-                        Constructing the <br>
-                        <i style="color: var(--oxblood);">Administrative State</i> <br>
-                        in the Age of Algorithms.
+                        Bridging the gap between <br>
+                        <i style="color: var(--oxblood);">Legal Theory</i> <br>
+                        and Economic Realities.
                     </h2>
                 </div>
                 <div class="scroll-hint">Scroll to Proceed</div>
@@ -490,92 +503,148 @@
                 <div class="vertical-label">01 / Mission</div>
                 <div class="section-inner">
                     <p class="lead-paragraph">
-                        Law moves slowly; markets move fast. We exist in that friction. CRS serves as the bridge between legal theory and economic reality, providing the intellectual scaffolding for India's evolving regulatory framework.
+                        The Centre for Regulatory Studies (CRS) at National Law University, Delhi was established to address a critical national shortcoming: building the human and institutional capacity required to operationalise economic freedom through sound regulation.
+                    </p>
+                    <p class="body-text">
+                        Recognising that effective regulation lies at the intersection of law, economics, management, and behavioural sciences, the Centre seeks to create an integrated intellectual framework that goes beyond traditional doctrinal approaches. Its mission is to deepen understanding of regulatory design, governance, and implementation.
                     </p>
                     
-                    <div class="meta-data-row" style="display: flex; gap: 60px; margin-top: 60px; border-top: 1px solid var(--line-color); padding-top: 40px;">
+                    <div class="meta-data-row" style="display: flex; gap: 40px; margin-top: 50px; border-top: 1px solid var(--line-color); padding-top: 30px; flex-wrap: wrap;">
                         <div>
-                            <div class="meta-data">Focus Area I</div>
-                            <h3 style="font-size: 1.5rem; margin-top: 10px;">Insolvency</h3>
+                            <div class="meta-data">Focus Area</div>
+                            <h3 style="font-size: 1.3rem; margin-top: 5px;">Insolvency</h3>
                         </div>
                         <div>
-                            <div class="meta-data">Focus Area II</div>
-                            <h3 style="font-size: 1.5rem; margin-top: 10px;">Competition</h3>
+                            <div class="meta-data">Focus Area</div>
+                            <h3 style="font-size: 1.3rem; margin-top: 5px;">Gaming Laws</h3>
                         </div>
                         <div>
-                            <div class="meta-data">Focus Area III</div>
-                            <h3 style="font-size: 1.5rem; margin-top: 10px;">Digital Rights</h3>
+                            <div class="meta-data">Focus Area</div>
+                            <h3 style="font-size: 1.3rem; margin-top: 5px;">E-Commerce</h3>
+                        </div>
+                        <div>
+                            <div class="meta-data">Focus Area</div>
+                            <h3 style="font-size: 1.3rem; margin-top: 5px;">Jurimetrics</h3>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- INTELLIGENCE SECTION -->
-            <section id="intelligence" class="section-wrapper">
-                <div class="vertical-label">02 / Docket</div>
+            <!-- JOURNAL SECTION -->
+            <section id="journal" class="section-wrapper">
+                <div class="vertical-label">02 / LEPR</div>
                 <div class="section-inner">
+                    <span class="section-marker">Law Economic and Policy Review</span>
+                    <h2 class="display-title" style="font-size: 2.5rem; margin-bottom: 20px;">Volume I: Sept 2026</h2>
+                    <p class="body-text" style="font-size: 1.2rem;">
+                        Institutions make or break a nation’s path to prosperity. Through LEPR, we seek to promote interdisciplinary research on institutions to develop a better functioning state machinery. We seek submissions from Professionals, Academicians, Policymakers, and Researchers.
+                    </p>
+
+                    <div style="background: white; border: 1px solid var(--line-color); padding: 40px; margin-top: 40px;">
+                        <h4 style="color: var(--oxblood); margin-bottom: 20px;">Submission Guidelines</h4>
+                        <ul style="list-style-type: disc; padding-left: 20px; color: #444; font-family: var(--font-head); font-size: 0.9rem; line-height: 1.8;">
+                            <li><strong>Deadline:</strong> 15th March, 2026</li>
+                            <li><strong>Length:</strong> 4,000 - 10,000 words</li>
+                            <li><strong>Style:</strong> OSCOLA (4th Edition)</li>
+                            <li><strong>Format:</strong> Microsoft Word (.doc/.docx)</li>
+                        </ul>
+                        <div style="margin-top: 30px;">
+                            <a href="mailto:crs_research@nludelhi.ac.in" class="btn-link">Submit Manuscript via Email</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RESEARCH SECTION -->
+            <section id="research" class="section-wrapper">
+                <div class="vertical-label">03 / Docket</div>
+                <div class="section-inner">
+                    <span class="section-marker">Recent Intelligence</span>
                     <div class="docket-grid">
                         
                         <!-- Item 1 -->
                         <article class="docket-card">
-                            <span class="card-type">Report / 2025</span>
-                            <h3 class="card-title">Gaming The System: A Constitutional Test</h3>
-                            <p class="card-excerpt">Establishing a three-tier regulatory structure for skill-based online gaming.</p>
-                            <a href="#" class="btn-link">Access Document</a>
+                            <span class="card-type">Project</span>
+                            <h3 class="card-title">EGF-E Gaming Research</h3>
+                            <p class="card-excerpt">Partnered with the E-Gaming Federation (EGF) to develop a principles-based approach to the regulation of E-Gaming in India.</p>
                         </article>
 
                         <!-- Item 2 -->
                         <article class="docket-card">
-                            <span class="card-type">Consultation</span>
-                            <h3 class="card-title">Group Insolvency Framework</h3>
-                            <p class="card-excerpt">Response to the IBBI discussion paper on corporate group resolution.</p>
-                            <a href="#" class="btn-link">Access Document</a>
+                            <span class="card-type">Editorial / Jan 2026</span>
+                            <h3 class="card-title">Cost of Business Failure</h3>
+                            <p class="card-excerpt">"Section 29A and the cost of treating business failure as misconduct" - Business Standard.</p>
+                            <a href="#" class="btn-link">Read Article</a>
                         </article>
 
                         <!-- Item 3 -->
                         <article class="docket-card">
-                            <span class="card-type">Academic Journal</span>
-                            <h3 class="card-title">LEPR Volume 04: Call for Papers</h3>
-                            <p class="card-excerpt">Inviting doctrinal manuscripts on Digital Public Infrastructure (DPI).</p>
-                            <a href="#" class="btn-link">Submit Manuscript</a>
+                            <span class="card-type">Editorial / Nov 2025</span>
+                            <h3 class="card-title">Insolvency Delays</h3>
+                            <p class="card-excerpt">"Decade-long delay in insolvency protections leaves families vulnerable" - Business Standard.</p>
+                            <a href="#" class="btn-link">Read Article</a>
                         </article>
 
                         <!-- Item 4 -->
-                        <article class="docket-card" style="background: var(--ink); color: var(--vellum);">
-                            <span class="card-type" style="color: var(--gold-thread);">Fellowship</span>
-                            <h3 class="card-title">Join the Research Cohort</h3>
-                            <p class="card-excerpt" style="color: rgba(242, 240, 233, 0.7);">Applications open for Research Fellow positions.</p>
-                            <a href="#" class="btn-link" style="border-color: var(--vellum);">Apply Now</a>
+                        <article class="docket-card">
+                            <span class="card-type">Research Paper / Oct 2024</span>
+                            <h3 class="card-title">Climate Change & Insolvency</h3>
+                            <p class="card-excerpt">Thought Paper on Climate Change and Insolvency in India - Insolvency Law Academy.</p>
+                            <a href="#" class="btn-link">Download Paper</a>
                         </article>
 
+                    </div>
+                </div>
+            </section>
+
+            <!-- COURSES SECTION -->
+            <section id="courses" class="section-wrapper">
+                <div class="vertical-label">04 / Academy</div>
+                <div class="section-inner">
+                    <span class="section-marker">Academic Programmes</span>
+                    <div style="background: var(--ink); color: var(--vellum); padding: 50px;">
+                        <h3 style="font-size: 2rem; color: var(--gold-thread); margin-bottom: 20px;">PGIP LLM Program</h3>
+                        <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px;">
+                            The two-year Post Graduate Insolvency Programme (PGIP) is a specialised academic programme offered by NLUD. It offers a structured pathway to becoming an Insolvency Professional (IP) with just 2 years of experience instead of the mandated 10-15 years.
+                        </p>
+                        <ul style="list-style: none; margin-bottom: 40px; opacity: 0.8; font-family: var(--font-head); font-size: 0.9rem;">
+                            <li style="margin-bottom: 10px;">&bull; Certification by IBBI & NLUD</li>
+                            <li style="margin-bottom: 10px;">&bull; 1 year classroom + 1 year internship</li>
+                            <li style="margin-bottom: 10px;">&bull; Selection via All India Entrance Test (AIET)</li>
+                        </ul>
+                        <a href="#" class="btn-link" style="border-color: var(--vellum);">View Syllabus</a>
                     </div>
                 </div>
             </section>
 
             <!-- DIRECTORS SECTION -->
             <section id="directors" class="section-wrapper">
-                <div class="vertical-label">03 / Architects</div>
+                <div class="vertical-label">05 / Architects</div>
                 <div class="section-inner">
                     <div class="portrait-layout">
                         
                         <!-- Person 1 -->
                         <div class="portrait-box">
                             <div class="img-frame">
-                                <img src="https://ui-avatars.com/api/?name=G+S&background=1A1A1A&color=fff&size=500" alt="VC">
+                                <img src="images/prof_bajpai.jpg" alt="Prof. G.S. Bajpai">
                             </div>
-                            <h3 class="person-name">Prof. G.S. Bajpai</h3>
+                            <h3 class="person-name">Prof. (Dr.) G.S. Bajpai</h3>
                             <span class="person-role">Chief Patron & Vice Chancellor</span>
-                            <p style="margin-top: 15px; color: #555;">Steering the Centre's vision towards high-impact policy interventions.</p>
+                            <p style="margin-top: 15px; color: #555; font-size: 0.95rem;">
+                                A prolific author and former Vice-Chancellor of RGNUL, Prof. Bajpai brings over three decades of academic experience. He has authored twenty-two books and over fifty papers.
+                            </p>
                         </div>
 
                         <!-- Person 2 -->
                         <div class="portrait-box">
                             <div class="img-frame">
-                                <img src="https://ui-avatars.com/api/?name=R+P&background=781C1C&color=fff&size=500" alt="Coord">
+                                <img src="images/dr_pandey.jpg" alt="Dr. Raghav Pandey">
                             </div>
                             <h3 class="person-name">Dr. Raghav Pandey</h3>
                             <span class="person-role">Centre Coordinator</span>
-                            <p style="margin-top: 15px; color: #555;">Associate Professor specializing in Insolvency and Constitutional Theory.</p>
+                            <p style="margin-top: 15px; color: #555; font-size: 0.95rem;">
+                                Author of "The Law of Corporate Insolvency in India". He holds a Ph.D. in Insolvency Law from IIT Bombay and previously served as Assistant Professor at MNLU Mumbai.
+                            </p>
                         </div>
 
                     </div>
@@ -586,12 +655,14 @@
             <footer id="contact" class="footer-simple">
                 <h2 class="footer-seal">CRS.</h2>
                 <div class="footer-nav">
-                    <a href="#">Twitter</a>
-                    <a href="#">LinkedIn</a>
-                    <a href="mailto:crs@nludelhi.ac.in">Email Us</a>
+                    <a href="https://www.linkedin.com/company/centre-for-regulatory-studies/">LinkedIn</a>
+                    <a href="mailto:crs_research@nludelhi.ac.in">crs_research@nludelhi.ac.in</a>
                 </div>
-                <p style="opacity: 0.5; font-size: 0.9rem;">
-                    Sector 14, Dwarka, New Delhi 110078 <br>
+                <p style="opacity: 0.5; font-size: 0.9rem; margin-top: 30px;">
+                    National Law University Delhi, Golf Course Rd,<br>
+                    Sector 14 Dwarka, New Delhi - 110078
+                </p>
+                <p style="opacity: 0.3; font-size: 0.7rem; margin-top: 20px;">
                     &copy; 2026 Centre for Regulatory Studies
                 </p>
             </footer>
