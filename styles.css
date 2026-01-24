@@ -13,6 +13,28 @@
 /* --- RESET & BASE --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* Skip to content link for accessibility */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--oxblood);
+    color: var(--vellum);
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 1000;
+    font-family: var(--font-head);
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    transition: top 0.3s;
+}
+
+.skip-to-content:focus {
+    top: 0;
+    outline: 3px solid var(--gold-thread);
+    outline-offset: 2px;
+}
+
 html {
     font-size: 18px;
     scroll-behavior: smooth;
@@ -64,21 +86,21 @@ h1, h2, h3, h4, h5 {
     line-height: 1.6;
     max-width: 95%;
     margin-bottom: 30px;
-    color: #333;
+    color: #222; /* Improved contrast from #333 */
     font-weight: 500;
 }
 
 .body-text {
     font-size: 1.1rem;
     margin-bottom: 20px;
-    color: #444;
+    color: #2a2a2a; /* Improved contrast from #444 */
 }
 
 .meta-data {
     font-family: var(--font-head);
     font-size: 0.7rem;
     letter-spacing: 0.1em;
-    color: #666;
+    color: #555; /* Improved contrast from #666 */
     text-transform: uppercase;
 }
 
@@ -273,7 +295,7 @@ h1, h2, h3, h4, h5 {
 
 .card-excerpt {
     font-size: 1rem;
-    color: #555;
+    color: #3a3a3a; /* Improved contrast from #555 */
     margin-bottom: 30px;
 }
 
@@ -314,7 +336,7 @@ h1, h2, h3, h4, h5 {
 }
 .pub-source {
     font-style: italic;
-    color: #666;
+    color: #555; /* Improved contrast from #666 */
 }
 
 /* --- EDITORIAL TEAM BOX --- */
@@ -339,7 +361,7 @@ h1, h2, h3, h4, h5 {
 .team-list-group ul {
     list-style: none;
     font-size: 0.95rem;
-    color: #444;
+    color: #2a2a2a; /* Improved contrast from #444 */
 }
 .team-list-group li { margin-bottom: 5px; }
 
@@ -386,7 +408,7 @@ h1, h2, h3, h4, h5 {
 
 .person-bio {
     margin-top: 15px;
-    color: #555;
+    color: #3a3a3a; /* Improved contrast from #555 */
     font-size: 0.95rem;
     text-align: justify;
 }
