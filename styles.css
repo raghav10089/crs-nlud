@@ -874,7 +874,20 @@ h1, h2, h3, h4, h5 {
     /* Adjust backgrounds */
     .sidebar-panel {
         background: #0f0f0f;
+        color: var(--ink); /* Light text in dark mode */
         border-right-color: var(--gold-thread);
+    }
+
+    .brand-sub {
+        color: var(--gold-thread);
+    }
+
+    .nav-item {
+        color: rgba(232, 230, 223, 0.7); /* Lighter nav items in dark mode */
+    }
+
+    .nav-item:hover {
+        color: var(--ink); /* Full brightness on hover */
     }
 
     .hero-overlay {
