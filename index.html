@@ -4,542 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centre for Regulatory Studies | NLU Delhi</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Centre for Regulatory Studies at National Law University Delhi - Building capacity for sound economic regulation through research, LEPR journal, PGIP LLM programs, and policy analysis on insolvency, e-gaming, and financial regulation.">
+    <meta name="keywords" content="regulatory studies, insolvency law, PGIP LLM, NLU Delhi, e-gaming regulation, LEPR journal, economic regulation, policy research">
+    <meta name="author" content="Centre for Regulatory Studies, NLU Delhi">
+    <link rel="canonical" href="https://www.regulatorystudies.in/">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.regulatorystudies.in/">
+    <meta property="og:title" content="Centre for Regulatory Studies | NLU Delhi">
+    <meta property="og:description" content="Building capacity for sound economic regulation through interdisciplinary research, academic programs, and policy analysis.">
+    <meta property="og:site_name" content="Centre for Regulatory Studies">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Centre for Regulatory Studies | NLU Delhi">
+    <meta name="twitter:description" content="Building capacity for sound economic regulation through research and education.">
+
     <!-- Fonts: Cinzel (Roman Authority), EB Garamond (The Text) -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        /* --- THEME VARIABLES --- */
-        :root {
-            --vellum: #F2F0E9;        /* Warm Antique Paper */
-            --ink: #1A1A1A;           /* Soft Black */
-            --oxblood: #781C1C;       /* Sealing Wax Red */
-            --gold-thread: #BFA978;   /* Muted Metallic */
-            --line-color: rgba(26, 26, 26, 0.15);
-            
-            --font-head: 'Cinzel', serif;
-            --font-body: 'EB Garamond', serif;
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Centre for Regulatory Studies",
+      "alternateName": "CRS",
+      "url": "https://www.regulatorystudies.in",
+      "logo": "https://www.regulatorystudies.in/favicon.svg",
+      "description": "Building capacity for sound economic regulation through interdisciplinary research, academic programs, and policy analysis on insolvency, e-gaming, and financial regulation.",
+      "foundingDate": "2015",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Golf Course Rd, Pocket 1, Sector 14 Dwarka",
+        "addressLocality": "New Delhi",
+        "addressRegion": "Delhi",
+        "postalCode": "110078",
+        "addressCountry": "IN"
+      },
+      "parentOrganization": {
+        "@type": "EducationalOrganization",
+        "name": "National Law University Delhi",
+        "url": "https://nludelhi.ac.in"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "crs_research@nludelhi.ac.in",
+        "contactType": "Research Inquiries"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/centre-for-regulatory-studies/"
+      ],
+      "department": [
+        {
+          "@type": "Organization",
+          "name": "Law Economic and Policy Review (LEPR)",
+          "description": "Interdisciplinary journal promoting research on institutions for better state machinery"
         }
-
-        /* --- RESET & BASE --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        html {
-            font-size: 18px;
-            scroll-behavior: smooth;
+      ],
+      "employee": [
+        {
+          "@type": "Person",
+          "name": "Prof. G.S. Bajpai",
+          "jobTitle": "Chief Patron & Vice Chancellor",
+          "description": "Over three decades of academic and administrative experience. Prolific author with twenty-two books/monographs and more than fifty papers."
+        },
+        {
+          "@type": "Person",
+          "name": "Dr. Raghav Pandey",
+          "jobTitle": "Centre Director",
+          "description": "Ph.D. in Insolvency Law from IIT Bombay. Author of The Law of Corporate Insolvency in India: Resolution and Liquidation (Thomson Reuters, 2021)."
         }
-
-        body {
-            font-family: var(--font-body);
-            background-color: var(--vellum);
-            color: var(--ink);
-            line-height: 1.6;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        a { text-decoration: none; color: inherit; transition: 0.3s ease; }
-        ul { list-style: none; }
-        img { display: block; width: 100%; }
-
-        /* --- TYPOGRAPHY --- */
-        h1, h2, h3, h4, h5 {
-            font-family: var(--font-head);
-            font-weight: 400;
-            text-transform: uppercase;
-        }
-
-        .display-title {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            line-height: 1.2;
-            letter-spacing: 0.02em;
-            margin-bottom: 30px;
-            color: var(--ink);
-        }
-
-        .section-marker {
-            font-family: var(--font-head);
-            font-size: 0.8rem;
-            letter-spacing: 0.2em;
-            color: var(--oxblood);
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--oxblood);
-            padding-bottom: 10px;
-            width: fit-content;
-        }
-
-        .lead-paragraph {
-            font-size: 1.3rem;
-            line-height: 1.6;
-            max-width: 95%;
-            margin-bottom: 30px;
-            color: #333;
-            font-weight: 500;
-        }
-
-        .body-text {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            color: #444;
-            text-align: justify;
-        }
-
-        .meta-data {
-            font-family: var(--font-head);
-            font-size: 0.7rem;
-            letter-spacing: 0.1em;
-            color: #666;
-            text-transform: uppercase;
-        }
-
-        /* --- LAYOUT ARCHITECTURE (Split Screen) --- */
-        .chancery-layout {
-            display: grid;
-            grid-template-columns: 350px 1fr; /* Fixed Sidebar | Fluid Content */
-            min-height: 100vh;
-        }
-
-        /* --- THE FIXED SIDEBAR (Identity) --- */
-        .sidebar-panel {
-            background: var(--ink);
-            color: var(--vellum);
-            height: 100vh;
-            position: sticky;
-            top: 0;
-            padding: 50px 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border-right: 4px double var(--gold-thread);
-            z-index: 100;
-            overflow-y: auto; /* Allow scrolling if menu is tall */
-        }
-
-        .brand-block {
-            border-bottom: 1px solid rgba(242, 240, 233, 0.2);
-            padding-bottom: 30px;
-        }
-
-        .brand-sub {
-            font-family: var(--font-head);
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            color: var(--gold-thread);
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .brand-main {
-            font-size: 2rem;
-            line-height: 1.1;
-            letter-spacing: 0.05em;
-        }
-
-        .nav-vertical {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .nav-item {
-            font-family: var(--font-head);
-            font-size: 0.85rem;
-            letter-spacing: 0.1em;
-            color: rgba(242, 240, 233, 0.6);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .nav-item::before {
-            content: '';
-            width: 0px; height: 1px;
-            background: var(--gold-thread);
-            transition: 0.3s;
-        }
-
-        .nav-item:hover { color: var(--vellum); }
-        .nav-item:hover::before { width: 15px; }
-
-        .sidebar-footer {
-            font-family: var(--font-head);
-            font-size: 0.7rem;
-            opacity: 0.4;
-            letter-spacing: 0.1em;
-            margin-top: 40px;
-        }
-
-        /* --- THE SCROLLING CONTENT --- */
-        .content-panel {
-            background: var(--vellum);
-            width: 100%;
-        }
-
-        /* --- HERO HEADER --- */
-        .hero-header {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            padding: 80px;
-            border-bottom: 1px solid var(--line-color);
-            position: relative;
-            background-image: radial-gradient(var(--line-color) 1px, transparent 0);
-            background-size: 40px 40px; /* Dot grid pattern */
-            /* Add hero image if available, else keep pattern */
-            /* background: url('images/hero_image.jpg') no-repeat center/cover; */
-        }
-
-        .hero-overlay {
-            background: rgba(242, 240, 233, 0.9);
-            padding: 40px;
-            border: 1px solid var(--line-color);
-            max-width: 900px;
-        }
-
-        .scroll-hint {
-            position: absolute;
-            bottom: 40px; right: 80px;
-            font-family: var(--font-head);
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            color: var(--oxblood);
-            writing-mode: vertical-rl;
-        }
-
-        /* --- CONTENT SECTIONS --- */
-        .section-wrapper {
-            display: grid;
-            grid-template-columns: 60px 1fr; /* Vertical Label | Content */
-            border-bottom: 1px solid var(--line-color);
-        }
-
-        .vertical-label {
-            border-right: 1px solid var(--line-color);
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            transform: rotate(180deg);
-            padding: 40px 0;
-            text-align: center;
-            font-family: var(--font-head);
-            font-size: 0.8rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            background: rgba(0,0,0,0.02);
-            color: var(--oxblood);
-            height: auto;
-        }
-
-        .section-inner {
-            padding: 80px 60px;
-        }
-
-        /* --- THE DOCKET (Grid) --- */
-        .docket-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .docket-card {
-            border: 1px solid var(--line-color);
-            background: #fff;
-            padding: 30px;
-            box-shadow: 10px 10px 0px rgba(0,0,0,0.05); /* Architectural shadow */
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .docket-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 15px 15px 0px var(--oxblood);
-            border-color: var(--ink);
-        }
-
-        .card-type {
-            font-family: var(--font-head);
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            color: var(--oxblood);
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .card-title {
-            font-size: 1.4rem;
-            line-height: 1.2;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-
-        .card-excerpt {
-            font-size: 1rem;
-            color: #555;
-            margin-bottom: 30px;
-        }
-
-        .btn-link {
-            font-family: var(--font-head);
-            font-size: 0.8rem;
-            letter-spacing: 0.1em;
-            border-bottom: 1px solid var(--ink);
-            padding-bottom: 3px;
-            text-transform: uppercase;
-            width: fit-content;
-        }
-
-        /* --- PUBLICATION LIST --- */
-        .pub-list {
-            list-style: none;
-            margin-top: 30px;
-        }
-        .pub-item {
-            padding: 20px 0;
-            border-bottom: 1px solid var(--line-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        .pub-date {
-            font-family: var(--font-head);
-            font-size: 0.8rem;
-            color: var(--oxblood);
-            min-width: 100px;
-        }
-        .pub-title {
-            font-weight: 600;
-            font-size: 1.1rem;
-            flex-grow: 1;
-        }
-        .pub-source {
-            font-style: italic;
-            color: #666;
-        }
-
-        /* --- EDITORIAL TEAM BOX --- */
-        .editorial-box {
-            background: #fff;
-            border: 1px solid var(--line-color);
-            padding: 40px;
-            margin-top: 40px;
-        }
-        .team-grid-text {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 20px;
-        }
-        .team-list-group h5 {
-            font-size: 0.9rem;
-            color: var(--oxblood);
-            margin-bottom: 10px;
-            letter-spacing: 0.1em;
-        }
-        .team-list-group ul {
-            list-style: none;
-            font-size: 0.95rem;
-            color: #444;
-        }
-        .team-list-group li { margin-bottom: 5px; }
-
-        /* --- PORTRAITS --- */
-        .portrait-layout {
-            display: flex;
-            gap: 40px;
-        }
-
-        .portrait-box {
-            width: 50%;
-        }
-
-        .img-frame {
-            width: 100%;
-            height: 350px;
-            border: 1px solid var(--ink);
-            padding: 10px;
-            margin-bottom: 25px;
-        }
-
-        .img-frame img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            filter: grayscale(100%) sepia(10%);
-            transition: 0.5s;
-        }
-
-        .portrait-box:hover img { filter: grayscale(0%); }
-
-        .person-name {
-            font-size: 1.8rem;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-
-        .person-role {
-            font-family: var(--font-head);
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            color: var(--gold-thread);
-            text-transform: uppercase;
-        }
-
-        /* --- FOOTER --- */
-        .footer-simple {
-            padding: 80px 40px;
-            background: var(--ink);
-            color: var(--vellum);
-            text-align: center;
-        }
-
-        .footer-seal {
-            font-family: var(--font-head);
-            font-size: 3rem;
-            margin-bottom: 30px;
-        }
-
-        .footer-nav {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            font-family: var(--font-head);
-            font-size: 0.8rem;
-            letter-spacing: 0.1em;
-            flex-wrap: wrap;
-        }
-
-        .footer-nav a:hover { color: var(--gold-thread); }
-
-        /* =========================================
-           MOBILE OPTIMIZATION (BREAKPOINT: 1024px)
-           ========================================= */
-        @media (max-width: 1024px) {
-            
-            /* Reset Grid to Stack */
-            .chancery-layout {
-                display: block; /* No grid on mobile */
-            }
-
-            /* Sidebar becomes Top Header */
-            .sidebar-panel {
-                height: auto;
-                position: relative;
-                width: 100%;
-                border-right: none;
-                border-bottom: 4px double var(--gold-thread);
-                padding: 40px 20px;
-                text-align: center;
-                overflow: visible;
-            }
-
-            .brand-block {
-                border-bottom: none;
-                padding-bottom: 10px;
-            }
-
-            .brand-main { font-size: 1.8rem; }
-            
-            /* Nav becomes Horizontal Row */
-            .nav-vertical {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-                margin-top: 20px;
-            }
-
-            .nav-item { font-size: 0.8rem; }
-            .sidebar-footer { display: none; } /* Hide footer metadata to save space */
-
-            /* Hero Adjustments */
-            .hero-header {
-                height: auto;
-                min-height: 60vh;
-                padding: 60px 20px;
-                text-align: center;
-            }
-            .hero-overlay { padding: 20px; }
-            
-            .display-title { font-size: 1.8rem; }
-            .section-marker { margin: 0 auto 20px auto; }
-            .scroll-hint { display: none; }
-
-            /* Content Sections */
-            .section-wrapper {
-                display: block; /* Stack label on top of content */
-                border-bottom: 1px solid var(--line-color);
-            }
-
-            /* Convert Vertical Label to Horizontal Banner */
-            .vertical-label {
-                writing-mode: horizontal-tb;
-                transform: none;
-                border-right: none;
-                border-bottom: 1px solid var(--line-color);
-                width: 100%;
-                padding: 15px 0;
-                height: auto;
-                display: block;
-            }
-
-            .section-inner {
-                padding: 50px 20px; /* Reduced side padding */
-            }
-
-            /* Grid Fixes */
-            .docket-grid {
-                grid-template-columns: 1fr; /* Stack cards */
-                gap: 40px;
-            }
-            
-            .portrait-layout {
-                flex-direction: column;
-                gap: 50px;
-            }
-            
-            .team-grid-text { grid-template-columns: 1fr; }
-
-            .portrait-box { width: 100%; }
-            .img-frame { height: auto; aspect-ratio: 1/1; }
-
-            /* Footer */
-            .footer-simple { padding: 60px 20px; }
-            .footer-nav { flex-direction: column; gap: 20px; }
-            
-            /* Text Sizing */
-            .lead-paragraph {
-                font-size: 1.2rem;
-                max-width: 100%;
-                text-align: left;
-            }
-            
-            .meta-data-row {
-                flex-direction: column;
-                gap: 20px !important;
-                margin-top: 40px !important;
-            }
-        }
-    </style>
+      ],
+      "keywords": "regulatory studies, insolvency law, PGIP LLM, e-gaming regulation, LEPR journal, economic regulation, policy research"
+    }
+    </script>
 </head>
 <body>
+
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
     <div class="chancery-layout">
         
         <!-- SIDEBAR (Fixed Book Cover) -->
-        <aside class="sidebar-panel">
+        <aside class="sidebar-panel" role="complementary" aria-label="Site navigation">
             <div>
                 <div class="brand-block">
                     <span class="brand-sub">National Law University Delhi</span>
                     <h1 class="brand-main">Centre for<br>Regulatory<br>Studies</h1>
                 </div>
-                
-                <nav class="nav-vertical">
+
+                <nav class="nav-vertical" role="navigation" aria-label="Main navigation">
                     <a href="#mandate" class="nav-item">Mandate</a>
                     <a href="#journal" class="nav-item">Journal (LEPR)</a>
                     <a href="#research" class="nav-item">Research</a>
@@ -555,7 +122,7 @@
         </aside>
 
         <!-- CONTENT SCROLL -->
-        <main class="content-panel">
+        <main class="content-panel" id="main-content" role="main">
             
             <!-- HERO -->
             <header class="hero-header">
@@ -563,10 +130,10 @@
                     <span class="section-marker">The Doctrinal Observatory</span>
                     <h2 class="display-title">
                         Building the capacity to <br>
-                        <i style="color: var(--oxblood);">Govern</i> <br>
+                        <i class="text-oxblood">Govern</i> <br>
                         the markets of tomorrow.
                     </h2>
-                    <p class="lead-paragraph" style="font-size: 1.1rem; max-width: 600px;">
+                    <p class="lead-paragraph hero-intro">
                         Bridging the gap between legal theory and market economy. An interdisciplinary approach for tomorrow’s regulatory challenges.
                     </p>
                 </div>
@@ -590,30 +157,30 @@
                         Functioning as a comprehensive platform for regulatory engagement, the Centre undertakes research through PhD programmes, fellowships, and sponsored projects; delivers education through courses of varying duration; and conducts outreach through seminars and workshops. In the short term, the Centre proposes specialised certification programmes for senior regulatory functionaries and a one-year executive programme for mid-career officers. In the long term, it aims to launch a two-year postgraduate programme in regulation and compliance.
                     </p>
                     
-                    <div class="meta-data-row" style="display: flex; gap: 40px; margin-top: 50px; border-top: 1px solid var(--line-color); padding-top: 30px; flex-wrap: wrap;">
+                    <div class="meta-data-row">
                         <div>
                             <div class="meta-data">Focus Area</div>
-                            <h3 style="font-size: 1.3rem; margin-top: 5px;">Insolvency</h3>
+                            <h3 class="focus-area-title">Insolvency</h3>
                         </div>
                         <div>
                             <div class="meta-data">Focus Area</div>
-                            <h3 style="font-size: 1.3rem; margin-top: 5px;">Gaming Laws</h3>
+                            <h3 class="focus-area-title">Gaming Laws</h3>
                         </div>
                         <div>
                             <div class="meta-data">Focus Area</div>
-                            <h3 style="font-size: 1.3rem; margin-top: 5px;">E-Commerce</h3>
+                            <h3 class="focus-area-title">E-Commerce</h3>
                         </div>
                         <div>
                             <div class="meta-data">Focus Area</div>
-                            <h3 style="font-size: 1.3rem; margin-top: 5px;">Jurimetrics</h3>
+                            <h3 class="focus-area-title">Jurimetrics</h3>
                         </div>
                         <div>
                             <div class="meta-data">Focus Area</div>
-                            <h3 style="font-size: 1.3rem; margin-top: 5px;">Financial Regs</h3>
+                            <h3 class="focus-area-title">Financial Regs</h3>
                         </div>
                         <div>
                             <div class="meta-data">Focus Area</div>
-                            <h3 style="font-size: 1.3rem; margin-top: 5px;">Public Policy</h3>
+                            <h3 class="focus-area-title">Public Policy</h3>
                         </div>
                     </div>
                 </div>
@@ -624,24 +191,24 @@
                 <div class="vertical-label">02 / LEPR</div>
                 <div class="section-inner">
                     <span class="section-marker">Law Economic and Policy Review</span>
-                    <h2 class="display-title" style="font-size: 2.5rem; margin-bottom: 20px;">Volume I: Sept 2026</h2>
-                    <p class="body-text" style="font-size: 1.2rem;">
-                        Institutions make or break a nation’s path to prosperity. Through LEPR, we seek to promote interdisciplinary research on institutions to develop a better functioning state machinery for tomorrow. We seek submissions from Professionals, Academicians, Policymakers, Researchers and students on the intersection of Law, Economics and Policy.
+                    <h2 class="display-title journal-title">Volume I: <time datetime="2026-09">Sept 2026</time></h2>
+                    <p class="body-text journal-intro">
+                        Institutions make or break a nation's path to prosperity. Through LEPR, we seek to promote interdisciplinary research on institutions to develop a better functioning state machinery for tomorrow. We seek submissions from Professionals, Academicians, Policymakers, Researchers and students on the intersection of Law, Economics and Policy.
                     </p>
 
-                    <div style="background: white; border: 1px solid var(--line-color); padding: 40px; margin-top: 40px;">
-                        <h4 style="color: var(--oxblood); margin-bottom: 20px;">Submission Guidelines</h4>
-                        <ul style="list-style-type: none; padding-left: 0; color: #444; font-family: var(--font-head); font-size: 0.95rem; line-height: 1.8;">
-                            <li><strong>Deadline:</strong> 15th March, 2026</li>
+                    <div class="guidelines-box">
+                        <h4 class="guidelines-title">Submission Guidelines</h4>
+                        <ul class="guidelines-list">
+                            <li><strong>Deadline:</strong> <time datetime="2026-03-15">15th March, 2026</time></li>
                             <li><strong>Length:</strong> 4,000 - 10,000 words (exclusive of abstract/footnotes).</li>
                             <li><strong>Abstract:</strong> Max 500 words.</li>
                             <li><strong>Citation:</strong> OSCOLA (4th Edition).</li>
                             <li><strong>Originality:</strong> Unpublished works only. Similarity score < 15%.</li>
                             <li><strong>Format:</strong> Microsoft Word (.doc/.docx).</li>
                         </ul>
-                        
-                        <h4 style="color: var(--oxblood); margin-top: 30px; margin-bottom: 20px;">Formatting Guidelines</h4>
-                        <ul style="list-style-type: none; padding-left: 0; color: #444; font-family: var(--font-head); font-size: 0.95rem; line-height: 1.8;">
+
+                        <h4 class="guidelines-title editor-subtitle">Formatting Guidelines</h4>
+                        <ul class="guidelines-list">
                             <li><strong>Font:</strong> Garamond.</li>
                             <li><strong>Size:</strong> 16 (Headings); 12 (Sub-headings and Body Text).</li>
                             <li><strong>Alignment:</strong> Level 1 (Centre/Small Caps), Level 2 (Left/Bold), Level 3 (Left/Underlined).</li>
@@ -650,7 +217,7 @@
                             <li><strong>Footnotes:</strong> Garamond, Size 10, Spacing 6 pt.</li>
                         </ul>
 
-                        <div style="margin-top: 30px;">
+                        <div class="submit-section">
                             <a href="mailto:crs_research@nludelhi.ac.in" class="btn-link">Submit Manuscript via Email</a>
                         </div>
                     </div>
@@ -662,9 +229,9 @@
                             <div class="team-list-group">
                                 <h5>Editor in Chief</h5>
                                 <ul><li>Dr. Raghav Pandey</li></ul>
-                                <h5 style="margin-top: 20px;">Managing Editor</h5>
+                                <h5 class="editor-subtitle">Managing Editor</h5>
                                 <ul><li>Manas Mahajan</li></ul>
-                                <h5 style="margin-top: 20px;">Lead Editor</h5>
+                                <h5 class="editor-subtitle">Lead Editor</h5>
                                 <ul><li>Kashish Jumani</li></ul>
                             </div>
                             <div class="team-list-group">
@@ -673,12 +240,12 @@
                                     <li>Kshitij Malhotra, Skand K. Nath</li>
                                     <li>Ayush Mhatre, Vibhakar Mittal, Vidushi</li>
                                 </ul>
-                                <h5 style="margin-top: 20px;">Associate Editors</h5>
+                                <h5 class="editor-subtitle">Associate Editors</h5>
                                 <ul>
                                     <li>Arshiya Gupta, Arshia Singla</li>
                                     <li>Aditri Sen, Anoushka Suhane</li>
                                 </ul>
-                                <h5 style="margin-top: 20px;">Assistant Editors</h5>
+                                <h5 class="editor-subtitle">Assistant Editors</h5>
                                 <ul>
                                     <li>Aadya Mital, Aravya Gupta</li>
                                     <li>Nandita Matolli, Nitya Singhania, Aashay Desai</li>
@@ -694,81 +261,81 @@
                 <div class="vertical-label">03 / Docket</div>
                 <div class="section-inner">
                     <span class="section-marker">Research & Intelligence</span>
-                    <p class="body-text" style="margin-bottom: 40px;">
+                    <p class="body-text research-intro">
                         CRS contributes to evidence-based regulatory discourse through journals, working papers, policy notes, issue briefs, and commentaries.
                     </p>
 
-                    <h4 style="margin-bottom: 20px;">Featured Project</h4>
-                    <div style="background: white; border: 1px solid var(--line-color); padding: 30px; margin-bottom: 50px;">
+                    <h4 class="section-heading">Featured Project</h4>
+                    <div class="project-box">
                         <h3 class="card-title">EGF-E Gaming Research</h3>
                         <p class="card-excerpt">
                             The Centre has partnered with the E-Gaming Federation (EGF) to contribute to research, knowledge development, and policy analysis for developing a principles-based approach to the regulation of E-Gaming in India.
                         </p>
                     </div>
 
-                    <h4 style="margin-bottom: 20px;">Books & Chapters</h4>
+                    <h4 class="section-heading">Books & Chapters</h4>
                     <ul class="pub-list">
                         <li class="pub-item">
-                            <span class="pub-date">2021</span>
+                            <time class="pub-date" datetime="2021">2021</time>
                             <span class="pub-title">The Law of Corporate Insolvency in India: Resolution and Liquidation</span>
                             <span class="pub-source">Thomson Reuters (Book)</span>
                         </li>
                         <li class="pub-item">
-                            <span class="pub-date">2021</span>
+                            <time class="pub-date" datetime="2021">2021</time>
                             <span class="pub-title">Examining Matrimonial Personal Laws in India from a lens of Feminist Jurisprudence</span>
                             <span class="pub-source">Thomson Reuters (Chapter)</span>
                         </li>
                         <li class="pub-item">
-                            <span class="pub-date">2020</span>
+                            <time class="pub-date" datetime="2020">2020</time>
                             <span class="pub-title">"Criminal Tribes to Habitual Offenders: A Change in name, Not in Spirit"</span>
                             <span class="pub-source">Thomson Reuters (Chapter)</span>
                         </li>
                     </ul>
 
-                    <h4 style="margin-bottom: 20px; margin-top: 40px;">Editorials & Articles</h4>
+                    <h4 class="section-heading-spaced">Editorials & Articles</h4>
                     <ul class="pub-list">
                         <li class="pub-item">
-                            <span class="pub-date">Jan 07, 2026</span>
+                            <time class="pub-date" datetime="2026-01-07">Jan 07, 2026</time>
                             <span class="pub-title">Section 29A and the cost of treating business failure as misconduct</span>
                             <span class="pub-source">Business Standard</span>
                         </li>
                         <li class="pub-item">
-                            <span class="pub-date">Nov 17, 2025</span>
+                            <time class="pub-date" datetime="2025-11-17">Nov 17, 2025</time>
                             <span class="pub-title">Decade-long delay in insolvency protections leaves families vulnerable</span>
                             <span class="pub-source">Business Standard</span>
                         </li>
                         <li class="pub-item">
-                            <span class="pub-date">Nov 11, 2024</span>
+                            <time class="pub-date" datetime="2024-11-11">Nov 11, 2024</time>
                             <span class="pub-title">Insolvency law must protect homebuyers, avoid complex resolution process</span>
                             <span class="pub-source">Business Standard</span>
                         </li>
                         <li class="pub-item">
-                            <span class="pub-date">Oct 2024</span>
+                            <time class="pub-date" datetime="2024-10">Oct 2024</time>
                             <span class="pub-title">Thought Paper on Climate Change and Insolvency in India</span>
                             <span class="pub-source">Insolvency Law Academy</span>
                         </li>
                         <li class="pub-item">
-                            <span class="pub-date">2024</span>
+                            <time class="pub-date" datetime="2024">2024</time>
                             <span class="pub-title">Real Estate Insolvency and the IBC</span>
                             <span class="pub-source">Prime Database</span>
                         </li>
                         <li class="pub-item">
-                            <span class="pub-date">Oct 10, 2023</span>
+                            <time class="pub-date" datetime="2023-10-10">Oct 10, 2023</time>
                             <span class="pub-title">India's insolvency assessment has a yawning gap</span>
                             <span class="pub-source">Deccan Herald</span>
                         </li>
                         <li class="pub-item">
-                            <span class="pub-date">Aug 29, 2023</span>
+                            <time class="pub-date" datetime="2023-08-29">Aug 29, 2023</time>
                             <span class="pub-title">Questioning priority: Govt dues in IBC</span>
                             <span class="pub-source">Business Standard</span>
                         </li>
                         <li class="pub-item">
-                            <span class="pub-date">July 24, 2023</span>
+                            <time class="pub-date" datetime="2023-07-24">July 24, 2023</time>
                             <span class="pub-title">Avoidance Transactions</span>
                             <span class="pub-source">NLS Business Law Review Blog</span>
                         </li>
                         <li class="pub-item">
-                            <span class="pub-date">2023</span>
+                            <time class="pub-date" datetime="2023">2023</time>
                             <span class="pub-title">The Non-Performing Assets and their fate under the IBC</span>
                             <span class="pub-source">Prime Database</span>
                         </li>
@@ -786,23 +353,23 @@
                         <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px;">
                             The two-year Post Graduate Insolvency Programme (PGIP) – MA/LLM is a specialised academic programme in insolvency and restructuring offered by NLUD. The PGIP Certification is issued and authorised by the Insolvency and Bankruptcy Board of India (IBBI).
                         </p>
-                        
-                        <h5 style="color: var(--gold-thread); margin-bottom: 15px;">Program Highlights</h5>
-                        <ul style="list-style: none; margin-bottom: 30px; opacity: 0.8; font-family: var(--font-head); font-size: 0.9rem;">
-                            <li style="margin-bottom: 10px;">&bull; Structured pathway to becoming an Insolvency Professional (IP).</li>
-                            <li style="margin-bottom: 10px;">&bull; Reduces experience requirement from 10–15 years to 2 years.</li>
-                            <li style="margin-bottom: 10px;">&bull; Curriculum integrates legal, financial, and practical training through case-based teaching and workshops.</li>
-                            <li style="margin-bottom: 10px;">&bull; Classroom instruction and internship follow UGC and IBBI-prescribed guidelines.</li>
+
+                        <h5 class="program-section-title">Program Highlights</h5>
+                        <ul class="program-list">
+                            <li>&bull; Structured pathway to becoming an Insolvency Professional (IP).</li>
+                            <li>&bull; Reduces experience requirement from 10–15 years to 2 years.</li>
+                            <li>&bull; Curriculum integrates legal, financial, and practical training through case-based teaching and workshops.</li>
+                            <li>&bull; Classroom instruction and internship follow UGC and IBBI-prescribed guidelines.</li>
                         </ul>
 
-                        <h5 style="color: var(--gold-thread); margin-bottom: 15px;">Eligibility Requirements</h5>
-                        <ul style="list-style: none; margin-bottom: 30px; opacity: 0.8; font-family: var(--font-head); font-size: 0.9rem;">
-                            <li style="margin-bottom: 10px;">&bull; <strong>Selection:</strong> Solely based on All India Entrance Test (AIET).</li>
-                            <li style="margin-bottom: 10px;">&bull; <strong>Education:</strong> Professional courses (CS, CA, Cost Accountancy, Law) OR Bachelor’s in Technology/Engineering OR Post-graduate in Economics, Finance, Commerce, Management or Insolvency (min 50% marks).</li>
-                            <li style="margin-bottom: 10px;">&bull; <strong>Age Limit:</strong> Maximum 28 years.</li>
-                            <li style="margin-bottom: 10px;">&bull; <strong>Note:</strong> Candidates appearing/awaiting results can apply, subject to eligibility by cut-off date.</li>
+                        <h5 class="program-section-title">Eligibility Requirements</h5>
+                        <ul class="program-list">
+                            <li>&bull; <strong>Selection:</strong> Solely based on All India Entrance Test (AIET).</li>
+                            <li>&bull; <strong>Education:</strong> Professional courses (CS, CA, Cost Accountancy, Law) OR Bachelor's in Technology/Engineering OR Post-graduate in Economics, Finance, Commerce, Management or Insolvency (min 50% marks).</li>
+                            <li>&bull; <strong>Age Limit:</strong> Maximum 28 years.</li>
+                            <li>&bull; <strong>Note:</strong> Candidates appearing/awaiting results can apply, subject to eligibility by cut-off date.</li>
                         </ul>
-                        <a href="https://nludelhi.ac.in" class="btn-link" style="border-color: var(--vellum);">View Brochure</a>
+                        <a href="https://nludelhi.ac.in" class="btn-link btn-link-light">View Brochure</a>
                     </div>
                 </div>
             </section>
@@ -816,11 +383,11 @@
                         <!-- Person 1 -->
                         <div class="portrait-box">
                             <div class="img-frame">
-                                <img src="images/prof_bajpai.jpg" alt="Prof. G.S. Bajpai">
+                                <img src="images/prof_bajpai.jpg" alt="Portrait of Professor G.S. Bajpai, Vice Chancellor of NLU Delhi and Chief Patron of Centre for Regulatory Studies" loading="lazy">
                             </div>
                             <h3 class="person-name">Prof. (Dr.) G.S. Bajpai</h3>
                             <span class="person-role">Chief Patron & Vice Chancellor</span>
-                            <p style="margin-top: 15px; color: #555; font-size: 0.95rem; text-align: justify;">
+                            <p class="person-bio">
                                 Professor (Dr.) G.S. Bajpai brings over three decades of academic and administrative experience to the Centre for Regulatory Studies. A prolific author and former Vice-Chancellor of RGNUL, he actively supports interdisciplinary research, empirical scholarship, regulatory capacity-building, and policy-oriented academic initiatives at the Centre. Prof. Bajpai has authored twenty-two books/monographs; more than fifty papers; more than ninety op-eds in leading dailies like Indian Express, the Hindu, and the Tribune and thirteen project reports.
                             </p>
                         </div>
@@ -828,11 +395,11 @@
                         <!-- Person 2 -->
                         <div class="portrait-box">
                             <div class="img-frame">
-                                <img src="images/dr_pandey.jpg" alt="Dr. Raghav Pandey">
+                                <img src="images/dr_pandey.jpg" alt="Portrait of Dr. Raghav Pandey, Director of Centre for Regulatory Studies at NLU Delhi" loading="lazy">
                             </div>
                             <h3 class="person-name">Dr. Raghav Pandey</h3>
                             <span class="person-role">Centre Director</span>
-                            <p style="margin-top: 15px; color: #555; font-size: 0.95rem; text-align: justify;">
+                            <p class="person-bio">
                                 Dr. Raghav Pandey holds a Ph.D. in Insolvency Law from IIT Bombay, an LL.M. from the Indian Law Institute, and an M.A. (Law) from TISS. Prior to joining NLUD, he served as Assistant Professor at Maharashtra National Law University, Mumbai, and as Visiting Faculty at IIIT Pune. He is the author of The Law of Corporate Insolvency in India: Resolution and Liquidation (Thomson Reuters, 2021) and has published widely in peer-reviewed journals and edited volumes.
                             </p>
                         </div>
@@ -842,17 +409,17 @@
             </section>
 
             <!-- FOOTER -->
-            <footer id="contact" class="footer-simple">
+            <footer id="contact" class="footer-simple" role="contentinfo">
                 <h2 class="footer-seal">CRS.</h2>
                 <div class="footer-nav">
                     <a href="https://www.linkedin.com/company/centre-for-regulatory-studies/">LinkedIn</a>
                     <a href="mailto:crs_research@nludelhi.ac.in">crs_research@nludelhi.ac.in</a>
                 </div>
-                <p style="opacity: 0.5; font-size: 0.9rem; margin-top: 30px;">
+                <p class="footer-address">
                     National Law University Delhi, Golf Course Rd, Pocket 1,<br>
                     Sector 14 Dwarka, Dwarka, New Delhi, Delhi, 110078
                 </p>
-                <p style="opacity: 0.3; font-size: 0.7rem; margin-top: 20px;">
+                <p class="footer-copyright">
                     &copy; 2026 Centre for Regulatory Studies
                 </p>
             </footer>

@@ -1,0 +1,11 @@
+# robots.txt for Centre for Regulatory Studies, NLU Delhi
+# Allow all search engines to index the entire site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.regulatorystudies.in/sitemap.xml
+
+# Crawl-delay (optional - helps reduce server load)
+Crawl-delay: 1
