@@ -439,6 +439,138 @@ h1, h2, h3, h4, h5 {
 
 .footer-nav a:hover { color: var(--gold-thread); }
 
+.footer-address {
+    opacity: 0.5;
+    font-size: 0.9rem;
+    margin-top: 30px;
+}
+
+.footer-copyright {
+    opacity: 0.3;
+    font-size: 0.7rem;
+    margin-top: 20px;
+}
+
+/* --- UTILITY CLASSES --- */
+.text-oxblood { color: var(--oxblood); }
+.text-gold { color: var(--gold-thread); }
+
+.hero-intro {
+    font-size: 1.1rem;
+    max-width: 600px;
+}
+
+.meta-data-row {
+    display: flex;
+    gap: 40px;
+    margin-top: 50px;
+    border-top: 1px solid var(--line-color);
+    padding-top: 30px;
+    flex-wrap: wrap;
+}
+
+.focus-area-title {
+    font-size: 1.3rem;
+    margin-top: 5px;
+}
+
+.journal-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.journal-intro {
+    font-size: 1.2rem;
+}
+
+.guidelines-box {
+    background: white;
+    border: 1px solid var(--line-color);
+    padding: 40px;
+    margin-top: 40px;
+}
+
+.guidelines-title {
+    color: var(--oxblood);
+    margin-bottom: 20px;
+}
+
+.guidelines-list {
+    list-style-type: none;
+    padding-left: 0;
+    color: #444;
+    font-family: var(--font-head);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.submit-section {
+    margin-top: 30px;
+}
+
+.editor-subtitle {
+    margin-top: 20px;
+}
+
+.research-intro {
+    margin-bottom: 40px;
+}
+
+.section-heading {
+    margin-bottom: 20px;
+}
+
+.section-heading-spaced {
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.project-box {
+    background: white;
+    border: 1px solid var(--line-color);
+    padding: 30px;
+    margin-bottom: 50px;
+}
+
+.program-box {
+    background: var(--ink);
+    color: var(--vellum);
+    padding: 50px;
+}
+
+.program-title {
+    font-size: 2rem;
+    color: var(--gold-thread);
+    margin-bottom: 20px;
+}
+
+.program-intro {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.program-section-title {
+    color: var(--gold-thread);
+    margin-bottom: 15px;
+}
+
+.program-list {
+    list-style: none;
+    margin-bottom: 30px;
+    opacity: 0.8;
+    font-family: var(--font-head);
+    font-size: 0.9rem;
+}
+
+.program-list li {
+    margin-bottom: 10px;
+}
+
+.btn-link-light {
+    border-color: var(--vellum);
+}
+
 /* --- MOBILE OPTIMIZATION (BREAKPOINT: 1024px) --- */
 @media (max-width: 1024px) {
 
@@ -564,5 +696,275 @@ h1, h2, h3, h4, h5 {
         flex-direction: column;
         gap: 20px !important;
         margin-top: 40px !important;
+    }
+}
+
+/* =========================================
+   PRINT STYLES
+   ========================================= */
+@media print {
+    /* Reset colors for print */
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    /* Page setup */
+    @page {
+        margin: 2cm;
+        size: A4;
+    }
+
+    /* Hide navigation and non-essential elements */
+    .sidebar-panel,
+    .skip-to-content,
+    .hero-header,
+    .scroll-hint,
+    .footer-nav,
+    .vertical-label {
+        display: none !important;
+    }
+
+    /* Full width for content */
+    .chancery-layout {
+        display: block;
+    }
+
+    .content-panel {
+        width: 100%;
+    }
+
+    /* Section formatting */
+    .section-wrapper {
+        display: block;
+        page-break-inside: avoid;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+    }
+
+    .section-inner {
+        padding: 0;
+    }
+
+    /* Typography for print */
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+
+    .display-title {
+        font-size: 18pt;
+        margin-bottom: 10pt;
+    }
+
+    .section-marker {
+        font-size: 10pt;
+        border-bottom: 2px solid #000;
+        margin-bottom: 10pt;
+    }
+
+    /* Publication lists */
+    .pub-list {
+        margin-top: 15pt;
+    }
+
+    .pub-item {
+        page-break-inside: avoid;
+        padding: 8pt 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .pub-date {
+        font-weight: bold;
+    }
+
+    /* Images */
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+
+    .portrait-layout {
+        display: block;
+    }
+
+    .portrait-box {
+        width: 100%;
+        page-break-inside: avoid;
+        margin-bottom: 20pt;
+    }
+
+    .img-frame {
+        border: 1px solid #000;
+        padding: 5pt;
+        height: auto;
+    }
+
+    .img-frame img {
+        filter: grayscale(100%);
+    }
+
+    /* Links - show URLs */
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+        color: #666;
+    }
+
+    a[href^="#"]:after,
+    a[href^="mailto:"]:after {
+        content: "";
+    }
+
+    /* Cards and boxes */
+    .docket-card,
+    .editorial-box {
+        border: 1px solid #000;
+        padding: 15pt;
+        margin-bottom: 15pt;
+        page-break-inside: avoid;
+    }
+
+    /* Footer */
+    .footer-simple {
+        padding: 20pt 0;
+        border-top: 2px solid #000;
+        margin-top: 30pt;
+    }
+
+    .footer-seal {
+        font-size: 24pt;
+    }
+
+    /* Page breaks */
+    section {
+        page-break-before: auto;
+    }
+
+    .person-bio {
+        text-align: left;
+    }
+}
+
+/* =========================================
+   DARK MODE
+   ========================================= */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --vellum: #1a1a1a;        /* Dark background */
+        --ink: #e8e6df;           /* Light text */
+        --oxblood: #c54545;       /* Brighter red for better contrast */
+        --gold-thread: #d4b896;   /* Brighter gold */
+        --line-color: rgba(232, 230, 223, 0.15);
+    }
+
+    body {
+        background-color: var(--vellum);
+        color: var(--ink);
+    }
+
+    /* Adjust backgrounds */
+    .sidebar-panel {
+        background: #0f0f0f;
+        border-right-color: var(--gold-thread);
+    }
+
+    .hero-overlay {
+        background: rgba(26, 26, 26, 0.95);
+    }
+
+    .hero-header {
+        background-image: radial-gradient(rgba(232, 230, 223, 0.1) 1px, transparent 0);
+    }
+
+    /* Cards and boxes */
+    .docket-card,
+    .editorial-box,
+    .guidelines-box,
+    .project-box {
+        background: #252525;
+        border-color: var(--line-color);
+    }
+
+    .docket-card:hover {
+        box-shadow: 15px 15px 0px var(--oxblood);
+    }
+
+    /* Program box (already dark, so invert) */
+    .program-box {
+        background: #0f0f0f;
+        border: 1px solid var(--gold-thread);
+    }
+
+    /* Footer */
+    .footer-simple {
+        background: #0f0f0f;
+    }
+
+    /* Images - reduce brightness in dark mode */
+    img {
+        opacity: 0.9;
+    }
+
+    .img-frame img {
+        filter: grayscale(100%) sepia(10%) brightness(0.8);
+    }
+
+    .portrait-box:hover img {
+        filter: grayscale(0%) brightness(0.9);
+    }
+
+    /* Link colors */
+    a {
+        color: var(--ink);
+    }
+
+    a:hover {
+        color: var(--gold-thread);
+    }
+
+    /* Skip to content in dark mode */
+    .skip-to-content {
+        background: var(--oxblood);
+        color: var(--vellum);
+    }
+
+    /* Text color adjustments */
+    .lead-paragraph {
+        color: #d8d8d8;
+    }
+
+    .body-text {
+        color: #c8c8c8;
+    }
+
+    .meta-data {
+        color: #999;
+    }
+
+    .card-excerpt,
+    .person-bio {
+        color: #b8b8b8;
+    }
+
+    .pub-source {
+        color: #999;
+    }
+
+    .team-list-group ul {
+        color: #c8c8c8;
+    }
+
+    /* Guidelines list */
+    .guidelines-list {
+        color: #c8c8c8;
     }
 }

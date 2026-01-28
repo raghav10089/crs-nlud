@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Centre for Regulatory Studies</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .error-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            background: var(--vellum);
+            background-image: radial-gradient(var(--line-color) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+
+        .error-box {
+            max-width: 700px;
+            background: rgba(242, 240, 233, 0.95);
+            border: 1px solid var(--line-color);
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .error-code {
+            font-family: var(--font-head);
+            font-size: 6rem;
+            color: var(--oxblood);
+            margin-bottom: 20px;
+            line-height: 1;
+            letter-spacing: 0.1em;
+        }
+
+        .error-title {
+            font-family: var(--font-head);
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 30px;
+            color: var(--ink);
+        }
+
+        .error-message {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #2a2a2a;
+            margin-bottom: 40px;
+        }
+
+        .error-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .error-link {
+            font-family: var(--font-head);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 12px 30px;
+            border: 2px solid var(--ink);
+            color: var(--ink);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .error-link:hover {
+            background: var(--oxblood);
+            border-color: var(--oxblood);
+            color: var(--vellum);
+        }
+
+        .error-link-primary {
+            background: var(--ink);
+            color: var(--vellum);
+        }
+
+        .error-link-primary:hover {
+            background: var(--oxblood);
+            border-color: var(--oxblood);
+        }
+
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 4rem;
+            }
+
+            .error-title {
+                font-size: 1.2rem;
+            }
+
+            .error-box {
+                padding: 40px 20px;
+            }
+
+            .error-links {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .error-link {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .error-container {
+                background: var(--vellum);
+            }
+
+            .error-box {
+                background: rgba(26, 26, 26, 0.95);
+            }
+
+            .error-message {
+                color: #c8c8c8;
+            }
+
+            .error-link {
+                border-color: var(--ink);
+                color: var(--ink);
+            }
+
+            .error-link-primary {
+                background: var(--ink);
+                color: var(--vellum);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-box">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-message">
+                The page you are looking for might have been removed, had its name changed,
+                or is temporarily unavailable. Please check the URL or navigate back to our homepage.
+            </p>
+            <div class="error-links">
+                <a href="/" class="error-link error-link-primary">Return Home</a>
+                <a href="/#journal" class="error-link">LEPR Journal</a>
+                <a href="/#research" class="error-link">Research</a>
+                <a href="/#contact" class="error-link">Contact</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
