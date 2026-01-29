@@ -882,6 +882,12 @@ h1, h2, h3, h4, h5 {
         color: var(--gold-thread);
     }
 
+    /* Fix sidebar footer "Est. 2015" - was barely visible */
+    .sidebar-footer {
+        color: rgba(232, 230, 223, 0.6) !important;
+        opacity: 1 !important; /* Override base opacity */
+    }
+
     .nav-item {
         color: rgba(232, 230, 223, 0.7); /* Lighter nav items in dark mode */
     }
@@ -950,11 +956,13 @@ h1, h2, h3, h4, h5 {
     }
 
     .footer-address {
-        color: rgba(232, 230, 223, 0.5);
+        color: rgba(232, 230, 223, 0.7) !important; /* Increased from 0.5 for better visibility */
+        opacity: 1 !important;
     }
 
     .footer-copyright {
-        color: rgba(232, 230, 223, 0.3);
+        color: rgba(232, 230, 223, 0.5) !important; /* Increased from 0.3 for better visibility */
+        opacity: 1 !important;
     }
 
     /* Images - reduce brightness in dark mode */
