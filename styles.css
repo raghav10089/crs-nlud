@@ -385,7 +385,7 @@ h1, h2, h3, h4, h5 {
 
 .img-frame img {
     width: 100%; height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Changed from cover to contain - shows full image without cropping */
     filter: grayscale(100%) sepia(10%);
     transition: 0.5s;
 }
@@ -675,7 +675,10 @@ h1, h2, h3, h4, h5 {
     .team-grid-text { grid-template-columns: 1fr; }
 
     .portrait-box { width: 100%; }
-    .img-frame { height: auto; aspect-ratio: 1/1; }
+    .img-frame {
+        height: auto;
+        min-height: 400px; /* Ensure adequate height for portraits */
+    }
 
     /* Footer */
     .footer-simple { padding: 60px 20px; }
