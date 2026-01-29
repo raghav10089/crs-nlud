@@ -377,7 +377,7 @@ h1, h2, h3, h4, h5 {
 
 .img-frame {
     width: 100%;
-    height: 350px;
+    height: 500px; /* Increased from 350px for more prominent portraits */
     border: 1px solid var(--ink);
     padding: 10px;
     margin-bottom: 25px;
@@ -677,7 +677,7 @@ h1, h2, h3, h4, h5 {
     .portrait-box { width: 100%; }
     .img-frame {
         height: auto;
-        min-height: 400px; /* Ensure adequate height for portraits */
+        min-height: 450px; /* Increased for more prominent mobile portraits */
     }
 
     /* Footer */
