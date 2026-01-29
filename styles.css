@@ -911,15 +911,50 @@ h1, h2, h3, h4, h5 {
         box-shadow: 15px 15px 0px var(--oxblood);
     }
 
-    /* Program box (already dark, so invert) */
-    .program-box {
-        background: #0f0f0f;
+    /* Program box (already dark, so keep dark and ensure text is visible) */
+    .program-box,
+    #courses .section-inner > div[style] {
+        background: #0f0f0f !important;
+        color: var(--ink) !important; /* Light text in dark mode */
         border: 1px solid var(--gold-thread);
+    }
+
+    /* Ensure program box headings are visible */
+    #courses h3,
+    #courses h5 {
+        color: var(--gold-thread) !important;
+    }
+
+    /* Program box text */
+    #courses p,
+    #courses li {
+        color: rgba(232, 230, 223, 0.9) !important;
     }
 
     /* Footer */
     .footer-simple {
         background: #0f0f0f;
+        color: var(--ink); /* Light text in dark mode */
+    }
+
+    .footer-seal {
+        color: var(--ink); /* Ensure "CRS." is visible */
+    }
+
+    .footer-nav a {
+        color: rgba(232, 230, 223, 0.8);
+    }
+
+    .footer-nav a:hover {
+        color: var(--gold-thread);
+    }
+
+    .footer-address {
+        color: rgba(232, 230, 223, 0.5);
+    }
+
+    .footer-copyright {
+        color: rgba(232, 230, 223, 0.3);
     }
 
     /* Images - reduce brightness in dark mode */
@@ -979,5 +1014,41 @@ h1, h2, h3, h4, h5 {
     /* Guidelines list */
     .guidelines-list {
         color: #c8c8c8;
+    }
+
+    /* Buttons and links */
+    .btn-link {
+        color: var(--ink);
+        border-bottom-color: var(--ink);
+    }
+
+    .btn-link:hover {
+        color: var(--gold-thread);
+        border-bottom-color: var(--gold-thread);
+    }
+
+    .btn-link-light {
+        color: var(--ink) !important;
+        border-color: var(--gold-thread) !important;
+    }
+
+    .btn-link-light:hover {
+        color: var(--gold-thread) !important;
+    }
+
+    /* Section markers - ensure they're bright enough */
+    .section-marker {
+        color: var(--oxblood);
+        border-bottom-color: var(--oxblood);
+    }
+
+    /* Display titles */
+    .display-title {
+        color: var(--ink);
+    }
+
+    /* Ensure focus areas are visible */
+    .focus-area-title {
+        color: var(--ink);
     }
 }
