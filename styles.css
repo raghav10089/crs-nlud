@@ -299,6 +299,30 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 30px;
 }
 
+/* Status Badge */
+.status-badge {
+    display: inline-block;
+    font-family: var(--font-head);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    background: transparent;
+    margin-bottom: 12px;
+}
+
+.status-badge.ongoing {
+    border-color: var(--gold-thread);
+    color: var(--gold-thread);
+}
+
+.status-badge.completed {
+    border-color: var(--oxblood);
+    color: var(--oxblood);
+}
+
 .btn-link {
     font-family: var(--font-head);
     font-size: 0.8rem;
@@ -413,6 +437,52 @@ h1, h2, h3, h4, h5 {
     text-align: justify;
 }
 
+/* --- TEAM MEMBERS --- */
+.team-members-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.team-category {
+    border-left: 2px solid var(--gold-thread);
+    padding-left: 30px;
+}
+
+.team-member-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+.team-member-item {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--line-color);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.team-member-item:last-child {
+    border-bottom: none;
+}
+
+.member-name {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--ink);
+}
+
+.member-role {
+    font-family: var(--font-head);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--oxblood);
+    text-transform: uppercase;
+}
+
 /* --- FOOTER --- */
 .footer-simple {
     padding: 80px 40px;
@@ -443,6 +513,19 @@ h1, h2, h3, h4, h5 {
     opacity: 0.5;
     font-size: 0.9rem;
     margin-top: 30px;
+}
+
+.map-container {
+    margin: 40px auto;
+    max-width: 800px;
+    border: 1px solid var(--gold-thread);
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
 }
 
 .footer-copyright {
@@ -699,6 +782,12 @@ h1, h2, h3, h4, h5 {
         flex-direction: column;
         gap: 20px !important;
         margin-top: 40px !important;
+    }
+
+    /* Team Members Mobile */
+    .team-members-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 }
 
@@ -1012,6 +1101,15 @@ h1, h2, h3, h4, h5 {
     .card-excerpt,
     .person-bio {
         color: #b8b8b8;
+    }
+
+    /* Team Members Dark Mode */
+    .member-name {
+        color: var(--ink); /* Light text in dark mode */
+    }
+
+    .team-category {
+        border-left-color: var(--gold-thread);
     }
 
     .pub-source {
