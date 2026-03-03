@@ -358,6 +358,19 @@ h1, h2, h3, h4, h5 {
     font-size: 1.1rem;
     flex-grow: 1;
 }
+
+.pub-link {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.pub-link:hover {
+    color: var(--oxblood);
+    border-bottom-color: var(--oxblood);
+}
+
 .pub-source {
     font-style: italic;
     color: #555; /* Improved contrast from #666 */
@@ -1114,6 +1127,15 @@ h1, h2, h3, h4, h5 {
 
     .pub-source {
         color: #999;
+    }
+
+    .pub-link {
+        color: var(--ink);
+    }
+
+    .pub-link:hover {
+        color: var(--gold-thread);
+        border-bottom-color: var(--gold-thread);
     }
 
     .team-list-group ul {
