@@ -185,6 +185,14 @@ h1, h2, h3, h4, h5 {
     width: 15px;
 }
 
+.nav-item.active {
+    color: var(--gold-thread);
+}
+
+.nav-item.active::before {
+    width: 15px;
+}
+
 .sidebar-footer {
     font-family: var(--font-head);
     font-size: 0.7rem;
