@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 140" role="img" aria-label="Centre for Regulatory Studies Logo">
+  <defs>
+    <style>
+      .logo-block { fill: #1a2332; }
+      .logo-block-accent { fill: #2d3a4d; }
+      .logo-text {
+        font-family: 'Cinzel', 'Georgia', serif;
+        font-size: 16px;
+        fill: #1a2332;
+        letter-spacing: 0.5px;
+      }
+      .logo-accent-line { stroke: #BFA978; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <!-- Geometric Grid Pattern (3x3) -->
+  <g id="geometric-mark">
+    <!-- Top Row -->
+    <rect class="logo-block" x="0" y="0" width="22" height="22" rx="1"/>
+    <rect class="logo-block-accent" x="28" y="0" width="22" height="22" rx="1"/>
+    <rect class="logo-block" x="56" y="0" width="22" height="22" rx="1"/>
+
+    <!-- Middle Row - Center column emphasized -->
+    <rect class="logo-block" x="0" y="28" width="22" height="22" rx="1"/>
+    <rect class="logo-block-accent" x="28" y="28" width="22" height="22" rx="1"/>
+    <rect class="logo-block" x="56" y="28" width="22" height="22" rx="1"/>
+
+    <!-- Bottom Row -->
+    <rect class="logo-block" x="0" y="56" width="22" height="22" rx="1"/>
+    <rect class="logo-block-accent" x="28" y="56" width="22" height="22" rx="1"/>
+    <rect class="logo-block" x="56" y="56" width="22" height="22" rx="1"/>
+  </g>
+
+  <!-- Text: Centre for Regulatory Studies -->
+  <text class="logo-text" x="0" y="105">CENTRE FOR</text>
+  <text class="logo-text" x="0" y="125">REGULATORY STUDIES</text>
+
+  <!-- Gold Accent Line -->
+  <line class="logo-accent-line" x1="0" y1="135" x2="400" y2="135"/>
+</svg>
