@@ -2,10 +2,9 @@
 :root {
     --vellum: #F2F0E9;        /* Warm Antique Paper */
     --ink: #1A1A1A;           /* Soft Black */
-    --navy: #1a2332;          /* Logo Navy */
     --oxblood: #781C1C;       /* Sealing Wax Red */
+    --gold-thread: #BFA978;   /* Muted Metallic */
     --line-color: rgba(26, 26, 26, 0.15);
-    --subtle-gray: #6B6B6B;   /* Muted text */
 
     --font-head: 'Cinzel', serif;
     --font-body: 'EB Garamond', serif;
@@ -32,7 +31,7 @@
 
 .skip-to-content:focus {
     top: 0;
-    outline: 3px solid var(--oxblood);
+    outline: 3px solid var(--gold-thread);
     outline-offset: 2px;
 }
 
@@ -116,7 +115,7 @@ h1, h2, h3, h4, h5 {
 
 /* --- THE FIXED SIDEBAR (Identity) --- */
 .sidebar-panel {
-    background: var(--navy);
+    background: var(--ink);
     color: var(--vellum);
     height: 100vh;
     position: sticky;
@@ -125,7 +124,7 @@ h1, h2, h3, h4, h5 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-right: 3px solid var(--oxblood);
+    border-right: 4px double var(--gold-thread);
     z-index: 100;
     overflow-y: auto; /* Allow scrolling if menu is tall */
 }
@@ -147,18 +146,19 @@ h1, h2, h3, h4, h5 {
     width: 100%;
     height: auto;
     display: block;
-    transition: opacity 0.3s ease;
+    filter: brightness(0) invert(1); /* Make logo white on dark sidebar */
+    transition: filter 0.3s ease;
 }
 
 .brand-logo:hover img {
-    opacity: 0.8;
+    filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(191, 169, 120, 0.4));
 }
 
 .brand-sub {
     font-family: var(--font-head);
     font-size: 0.7rem;
     letter-spacing: 0.2em;
-    color: rgba(242, 240, 233, 0.6);
+    color: var(--gold-thread);
     margin-bottom: 15px;
     display: block;
     text-align: center;
@@ -190,14 +190,14 @@ h1, h2, h3, h4, h5 {
 .nav-item::before {
     content: '';
     width: 0px; height: 1px;
-    background: var(--oxblood);
+    background: var(--gold-thread);
     transition: 0.3s;
 }
 
 .nav-item:hover,
 .nav-item:focus {
     color: var(--vellum);
-    outline: 2px solid var(--oxblood);
+    outline: 2px solid var(--gold-thread);
     outline-offset: 4px;
 }
 
@@ -207,8 +207,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .nav-item.active {
-    color: var(--vellum);
-    font-weight: 500;
+    color: var(--gold-thread);
 }
 
 .nav-item.active::before {
@@ -347,8 +346,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .status-badge.ongoing {
-    border-color: var(--navy);
-    color: var(--navy);
+    border-color: var(--gold-thread);
+    color: var(--gold-thread);
 }
 
 .status-badge.completed {
@@ -473,7 +472,7 @@ h1, h2, h3, h4, h5 {
     font-family: var(--font-head);
     font-size: 0.75rem;
     letter-spacing: 0.2em;
-    color: var(--oxblood);
+    color: var(--gold-thread);
     text-transform: uppercase;
 }
 
@@ -493,7 +492,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .team-category {
-    border-left: 2px solid var(--oxblood);
+    border-left: 2px solid var(--gold-thread);
     padding-left: 30px;
 }
 
@@ -554,7 +553,7 @@ h1, h2, h3, h4, h5 {
     flex-wrap: wrap;
 }
 
-.footer-nav a:hover { color: var(--oxblood); }
+.footer-nav a:hover { color: var(--gold-thread); }
 
 .footer-address {
     opacity: 0.5;
@@ -565,7 +564,7 @@ h1, h2, h3, h4, h5 {
 .map-container {
     margin: 40px auto;
     max-width: 800px;
-    border: 1px solid var(--line-color);
+    border: 1px solid var(--gold-thread);
     padding: 10px;
     background: rgba(255, 255, 255, 0.05);
 }
@@ -583,7 +582,7 @@ h1, h2, h3, h4, h5 {
 
 /* --- UTILITY CLASSES --- */
 .text-oxblood { color: var(--oxblood); }
-.text-gold { color: var(--oxblood); }
+.text-gold { color: var(--gold-thread); }
 
 .hero-intro {
     font-size: 1.1rem;
@@ -671,7 +670,7 @@ h1, h2, h3, h4, h5 {
 
 .program-title {
     font-size: 2rem;
-    color: var(--vellum);
+    color: var(--gold-thread);
     margin-bottom: 20px;
 }
 
@@ -682,7 +681,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .program-section-title {
-    color: var(--vellum);
+    color: var(--gold-thread);
     margin-bottom: 15px;
 }
 
@@ -716,7 +715,7 @@ h1, h2, h3, h4, h5 {
         position: relative;
         width: 100%;
         border-right: none;
-        border-bottom: 2px solid var(--navy);
+        border-bottom: 4px double var(--gold-thread);
         padding: 40px 20px;
         text-align: center;
         overflow: visible;
@@ -757,7 +756,7 @@ h1, h2, h3, h4, h5 {
     .nav-item:hover,
     .nav-item:focus {
         background: rgba(242, 240, 233, 0.1);
-        outline: 2px solid var(--oxblood);
+        outline: 2px solid var(--gold-thread);
         outline-offset: 2px;
     }
 
