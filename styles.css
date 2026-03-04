@@ -88,12 +88,14 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 30px;
     color: #222; /* Improved contrast from #333 */
     font-weight: 500;
+    text-align: justify;
 }
 
 .body-text {
     font-size: 1.1rem;
     margin-bottom: 20px;
     color: #2a2a2a; /* Improved contrast from #444 */
+    text-align: justify;
 }
 
 .meta-data {
@@ -297,6 +299,7 @@ h1, h2, h3, h4, h5 {
     font-size: 1rem;
     color: #3a3a3a; /* Improved contrast from #555 */
     margin-bottom: 30px;
+    text-align: justify;
 }
 
 /* Status Badge */
@@ -959,227 +962,3 @@ h1, h2, h3, h4, h5 {
     }
 }
 
-/* =========================================
-   DARK MODE
-   ========================================= */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --vellum: #1a1a1a;        /* Dark background */
-        --ink: #e8e6df;           /* Light text */
-        --oxblood: #c54545;       /* Brighter red for better contrast */
-        --gold-thread: #d4b896;   /* Brighter gold */
-        --line-color: rgba(232, 230, 223, 0.15);
-    }
-
-    body {
-        background-color: var(--vellum);
-        color: var(--ink);
-    }
-
-    /* Adjust backgrounds */
-    .sidebar-panel {
-        background: #0f0f0f;
-        color: var(--ink); /* Light text in dark mode */
-        border-right-color: var(--gold-thread);
-    }
-
-    .brand-sub {
-        color: var(--gold-thread);
-    }
-
-    /* Fix sidebar footer "Est. 2015" - was barely visible */
-    .sidebar-footer {
-        color: rgba(232, 230, 223, 0.6) !important;
-        opacity: 1 !important; /* Override base opacity */
-    }
-
-    .nav-item {
-        color: rgba(232, 230, 223, 0.7); /* Lighter nav items in dark mode */
-    }
-
-    .nav-item:hover {
-        color: var(--ink); /* Full brightness on hover */
-    }
-
-    .hero-overlay {
-        background: rgba(26, 26, 26, 0.95);
-    }
-
-    .hero-header {
-        background-image: radial-gradient(rgba(232, 230, 223, 0.1) 1px, transparent 0);
-    }
-
-    /* Cards and boxes */
-    .docket-card,
-    .editorial-box,
-    .guidelines-box,
-    .project-box {
-        background: #252525;
-        border-color: var(--line-color);
-    }
-
-    .docket-card:hover {
-        box-shadow: 15px 15px 0px var(--oxblood);
-    }
-
-    /* Program box (already dark, so keep dark and ensure text is visible) */
-    .program-box,
-    #courses .section-inner > div[style] {
-        background: #0f0f0f !important;
-        color: var(--ink) !important; /* Light text in dark mode */
-        border: 1px solid var(--gold-thread);
-    }
-
-    /* Ensure program box headings are visible */
-    #courses h3,
-    #courses h5 {
-        color: var(--gold-thread) !important;
-    }
-
-    /* Program box text */
-    #courses p,
-    #courses li {
-        color: rgba(232, 230, 223, 0.9) !important;
-    }
-
-    /* Footer */
-    .footer-simple {
-        background: #0f0f0f;
-        color: var(--ink); /* Light text in dark mode */
-    }
-
-    .footer-seal {
-        color: var(--ink); /* Ensure "CRS." is visible */
-    }
-
-    .footer-nav a {
-        color: rgba(232, 230, 223, 0.8);
-    }
-
-    .footer-nav a:hover {
-        color: var(--gold-thread);
-    }
-
-    .footer-address {
-        color: rgba(232, 230, 223, 0.7) !important; /* Increased from 0.5 for better visibility */
-        opacity: 1 !important;
-    }
-
-    .footer-copyright {
-        color: rgba(232, 230, 223, 0.5) !important; /* Increased from 0.3 for better visibility */
-        opacity: 1 !important;
-    }
-
-    /* Images - reduce brightness in dark mode */
-    img {
-        opacity: 0.9;
-    }
-
-    .img-frame img {
-        filter: grayscale(100%) sepia(10%) brightness(0.8);
-    }
-
-    .portrait-box:hover img {
-        filter: grayscale(0%) brightness(0.9);
-    }
-
-    /* Link colors */
-    a {
-        color: var(--ink);
-    }
-
-    a:hover {
-        color: var(--gold-thread);
-    }
-
-    /* Skip to content in dark mode */
-    .skip-to-content {
-        background: var(--oxblood);
-        color: var(--vellum);
-    }
-
-    /* Text color adjustments */
-    .lead-paragraph {
-        color: #d8d8d8;
-    }
-
-    .body-text {
-        color: #c8c8c8;
-    }
-
-    .meta-data {
-        color: #999;
-    }
-
-    .card-excerpt,
-    .person-bio {
-        color: #b8b8b8;
-    }
-
-    /* Team Members Dark Mode */
-    .member-name {
-        color: var(--ink); /* Light text in dark mode */
-    }
-
-    .team-category {
-        border-left-color: var(--gold-thread);
-    }
-
-    .pub-source {
-        color: #999;
-    }
-
-    .pub-link {
-        color: var(--ink);
-    }
-
-    .pub-link:hover {
-        color: var(--gold-thread);
-        border-bottom-color: var(--gold-thread);
-    }
-
-    .team-list-group ul {
-        color: #c8c8c8;
-    }
-
-    /* Guidelines list */
-    .guidelines-list {
-        color: #c8c8c8;
-    }
-
-    /* Buttons and links */
-    .btn-link {
-        color: var(--ink);
-        border-bottom-color: var(--ink);
-    }
-
-    .btn-link:hover {
-        color: var(--gold-thread);
-        border-bottom-color: var(--gold-thread);
-    }
-
-    .btn-link-light {
-        color: var(--ink) !important;
-        border-color: var(--gold-thread) !important;
-    }
-
-    .btn-link-light:hover {
-        color: var(--gold-thread) !important;
-    }
-
-    /* Section markers - ensure they're bright enough */
-    .section-marker {
-        color: var(--oxblood);
-        border-bottom-color: var(--oxblood);
-    }
-
-    /* Display titles */
-    .display-title {
-        color: var(--ink);
-    }
-
-    /* Ensure focus areas are visible */
-    .focus-area-title {
-        color: var(--ink);
-    }
-}
