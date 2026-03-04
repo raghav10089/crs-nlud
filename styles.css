@@ -134,6 +134,26 @@ h1, h2, h3, h4, h5 {
     padding-bottom: 30px;
 }
 
+/* Logo Container */
+.brand-logo {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto 25px auto;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.brand-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(0) invert(1); /* Make logo white on dark sidebar */
+    transition: filter 0.3s ease;
+}
+
+.brand-logo:hover img {
+    filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(191, 169, 120, 0.4));
+}
+
 .brand-sub {
     font-family: var(--font-head);
     font-size: 0.7rem;
@@ -141,6 +161,7 @@ h1, h2, h3, h4, h5 {
     color: var(--gold-thread);
     margin-bottom: 15px;
     display: block;
+    text-align: center;
 }
 
 .brand-main {
@@ -703,6 +724,12 @@ h1, h2, h3, h4, h5 {
     .brand-block {
         border-bottom: none;
         padding-bottom: 10px;
+    }
+
+    /* Logo responsive sizing */
+    .brand-logo {
+        max-width: 240px;
+        margin: 0 auto 20px auto;
     }
 
     .brand-main { font-size: 1.8rem; }
