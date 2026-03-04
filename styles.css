@@ -116,8 +116,8 @@ h1, h2, h3, h4, h5 {
 
 /* --- THE FIXED SIDEBAR (Identity) --- */
 .sidebar-panel {
-    background: var(--vellum);
-    color: var(--navy);
+    background: var(--navy);
+    color: var(--vellum);
     height: 100vh;
     position: sticky;
     top: 0;
@@ -125,13 +125,13 @@ h1, h2, h3, h4, h5 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-right: 2px solid var(--navy);
+    border-right: 3px solid var(--oxblood);
     z-index: 100;
     overflow-y: auto; /* Allow scrolling if menu is tall */
 }
 
 .brand-block {
-    border-bottom: 1px solid rgba(26, 35, 50, 0.15);
+    border-bottom: 1px solid rgba(242, 240, 233, 0.2);
     padding-bottom: 30px;
 }
 
@@ -158,7 +158,7 @@ h1, h2, h3, h4, h5 {
     font-family: var(--font-head);
     font-size: 0.7rem;
     letter-spacing: 0.2em;
-    color: var(--subtle-gray);
+    color: rgba(242, 240, 233, 0.6);
     margin-bottom: 15px;
     display: block;
     text-align: center;
@@ -181,7 +181,7 @@ h1, h2, h3, h4, h5 {
     font-family: var(--font-head);
     font-size: 0.85rem;
     letter-spacing: 0.1em;
-    color: var(--subtle-gray);
+    color: rgba(242, 240, 233, 0.6);
     display: flex;
     align-items: center;
     gap: 15px;
@@ -196,7 +196,7 @@ h1, h2, h3, h4, h5 {
 
 .nav-item:hover,
 .nav-item:focus {
-    color: var(--navy);
+    color: var(--vellum);
     outline: 2px solid var(--oxblood);
     outline-offset: 4px;
 }
@@ -207,7 +207,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .nav-item.active {
-    color: var(--navy);
+    color: var(--vellum);
     font-weight: 500;
 }
 
