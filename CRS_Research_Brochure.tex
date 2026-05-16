@@ -1,0 +1,514 @@
+\documentclass[11pt,a4paper]{article}
+
+% Packages
+\usepackage[margin=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{fontspec}
+\usepackage{tcolorbox}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{caption}
+
+% Color definitions - matching website theme
+\definecolor{ink}{RGB}{26,26,26}
+\definecolor{oxblood}{RGB}{105,20,20}
+\definecolor{goldthread}{RGB}{184,134,11}
+\definecolor{vellum}{RGB}{250,248,241}
+
+% Font settings
+\setmainfont{EB Garamond}
+\newfontfamily\headingfont{Cinzel}
+
+% Hyperlink setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=oxblood,
+    urlcolor=oxblood,
+    citecolor=oxblood
+}
+
+% Title formatting
+\titleformat{\section}
+  {\headingfont\Large\bfseries\color{oxblood}}
+  {}
+  {0pt}
+  {}
+  [\titlerule]
+
+\titleformat{\subsection}
+  {\headingfont\large\bfseries\color{ink}}
+  {}
+  {0pt}
+  {}
+
+% Header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textit{Centre for Regulatory Studies}}
+\fancyhead[R]{\small\textit{National Law University Delhi}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Title page settings
+\title{
+  \vspace{-2cm}
+  \begin{center}
+    {\headingfont\Huge\textcolor{oxblood}{Centre for Regulatory Studies}}\\[0.5cm]
+    {\headingfont\Large National Law University Delhi}\\[1cm]
+    {\Large\textit{Research Brochure}}\\[0.5cm]
+    {\large Building Capacity to Govern the Markets of Tomorrow}
+  \end{center}
+}
+\date{}
+\author{}
+
+\begin{document}
+
+% Title page
+\maketitle
+\thispagestyle{empty}
+
+\vfill
+
+\begin{center}
+\begin{tcolorbox}[colback=vellum,colframe=goldthread,width=0.9\textwidth,arc=3mm]
+\centering
+\textbf{\headingfont Established 2015}\\[0.3cm]
+\textit{An interdisciplinary approach to building regulatory capacity\\
+for India's evolving market economy}
+\end{tcolorbox}
+\end{center}
+
+\vfill
+
+\begin{center}
+\small
+Golf Course Road, Sector 14 Dwarka, New Delhi - 110078\\
+Email: crs\_research@nludelhi.ac.in\\
+Web: \url{https://www.regulatorystudies.in}
+\end{center}
+
+\clearpage
+
+% Remove header from first content page
+\thispagestyle{fancy}
+
+\section*{Executive Summary}
+
+The \textbf{Centre for Regulatory Studies (CRS)} at National Law University Delhi is India's premier institution dedicated to developing regulation as a rigorous and independent multi-disciplinary field of study. Established in 2015, the Centre addresses a critical gap in India's economic reform journey—the systematic building of regulatory capacity required to operationalize economic freedom through sound regulation.
+
+\vspace{0.5cm}
+
+\begin{tcolorbox}[colback=ink!5,colframe=oxblood,title={\headingfont Our Mission},fonttitle=\bfseries\color{vellum},coltitle=vellum,colbacktitle=oxblood]
+To develop regulations as an interdisciplinary field of study, combining law, economics, management, accountancy, and behavioral sciences to strengthen the functioning of India's modern market economy through rigorous research, innovative education, and evidence-based policy engagement.
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+\noindent The Centre operates at the intersection of academic excellence and policy relevance, conducting cutting-edge research through PhD programmes, fellowships, and sponsored projects, while delivering specialized education ranging from certificate programmes to postgraduate degrees. Our work is characterized by empirical rigor, theoretical depth, and direct applicability to India's evolving regulatory landscape.
+
+\clearpage
+
+\section{About National Law University Delhi}
+
+\subsection*{Academic Excellence \& Research Leadership}
+
+National Law University Delhi (NLUD) stands as one of India's most distinguished institutions of legal education and research. Established under the National Law University Delhi Act, 2008, NLUD has consistently demonstrated academic excellence and research innovation.
+
+\vspace{0.3cm}
+
+\begin{tcolorbox}[colback=goldthread!10,colframe=goldthread,arc=2mm]
+\textbf{\headingfont Key Achievements:}
+\begin{itemize}[leftmargin=*,noitemsep]
+    \item \textbf{Ranked 2nd} in NIRF Law Rankings for eight consecutive years (including NIRF 2025)
+    \item Home to \textbf{29 specialized research centres} fostering interdisciplinary scholarship
+    \item \textbf{25+ international collaborations} with universities including University of Melbourne, Queen's University (Canada), and University of Sheffield
+    \item Flagship journals including \textit{Journal of National Law University Delhi (JNLUD)}—a COPE member
+    \item Strong research culture with active funded projects and policy engagement
+\end{itemize}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+\subsection*{Distinguished Leadership}
+
+\textbf{Prof. (Dr.) G.S. Bajpai}, Vice-Chancellor of NLU Delhi and Chief Patron of CRS, brings over three decades of academic and administrative experience. A prolific scholar, Prof. Bajpai has authored 22 books/monographs, more than 60 research papers, over 100 op-eds in leading national dailies (\textit{Indian Express, The Hindu, The Tribune}), and 13 project reports. His leadership actively supports interdisciplinary research, empirical scholarship, and regulatory capacity-building initiatives.
+
+\vspace{0.5cm}
+
+\subsection*{Research Infrastructure}
+
+NLUD's commitment to research excellence is evidenced through its specialized centres including the Centre for Communication Governance (CCG), Centre for Innovation, Intellectual Property and Competition (CIIPC), and the Centre for Regulatory Studies. These centres serve as hubs for cutting-edge research, international collaboration, and high-impact policy work, contributing significantly to India's legal and regulatory discourse.
+
+\clearpage
+
+\section{Centre for Regulatory Studies: Genesis \& Mandate}
+
+\subsection*{Addressing a Critical National Gap}
+
+Despite over three decades of economic reforms in India, a fundamental asymmetry persists: while reforms have successfully expanded economic freedom, insufficient attention has been paid to building the human and institutional capacity required to operationalize this freedom through sound regulation. This gap has constrained the full realization of reform outcomes.
+
+\vspace{0.3cm}
+
+The Centre for Regulatory Studies was established in 2015 to systematically address this shortcoming by building regulatory capacity for India's evolving market economy. The Centre recognizes that effective regulation lies at the intersection of multiple disciplines—law, economics, management, accountancy, and behavioral sciences—and seeks to create an integrated intellectual framework that transcends traditional doctrinal approaches.
+
+\vspace{0.5cm}
+
+\subsection*{Founding Vision \& Current Leadership}
+
+The CRS was founded under the visionary leadership of \textbf{Dr. M.S. Sahoo}, former Chairperson of the Insolvency and Bankruptcy Board of India (IBBI), whose pioneering contributions laid the foundation for the Centre as a cornerstone of regulatory scholarship in India.
+
+\vspace{0.3cm}
+
+This legacy is presently carried forward under the leadership of \textbf{Dr. Raghav Pandey}, Director of CRS, who holds a Ph.D. in Insolvency Law from IIT Bombay, an LL.M. from the Indian Law Institute, and an M.A. (Law) from TISS. Prior to joining NLUD, Dr. Pandey served as Assistant Professor at Maharashtra National Law University, Mumbai, and as Visiting Faculty at IIIT Pune. He is the author of \textit{The Law of Corporate Insolvency in India: Resolution and Liquidation} (Thomson Reuters, 2021) and has published extensively in peer-reviewed journals and edited volumes.
+
+\vspace{0.5cm}
+
+\subsection*{Comprehensive Mandate}
+
+\begin{tcolorbox}[colback=vellum,colframe=ink,arc=2mm,boxrule=1.5pt]
+The Centre functions as a comprehensive platform for regulatory engagement:
+
+\begin{itemize}[leftmargin=*,itemsep=0.3cm]
+    \item \textbf{Research:} PhD programmes, fellowships, and sponsored research projects
+    \item \textbf{Education:} Courses ranging from appreciation programmes to two-year postgraduate degrees
+    \item \textbf{Outreach:} Seminars, workshops, conferences, and policy dialogues
+    \item \textbf{Publications:} Academic journals, working papers, white papers, and policy briefs
+    \item \textbf{Consultancy:} Evidence-based advisory services for regulators and policymakers
+    \item \textbf{Capacity Development:} Training programmes for regulatory functionaries
+\end{itemize}
+\end{tcolorbox}
+
+\clearpage
+
+\section{Research Focus Areas \& Achievements}
+
+The Centre pursues a focused research agenda centered on critical areas of economic regulation that directly impact India's market economy and institutional development.
+
+\subsection*{Core Research Domains}
+
+\begin{multicols}{2}
+\begin{itemize}[leftmargin=*,noitemsep]
+    \item \textbf{Insolvency \& Bankruptcy}
+    \item \textbf{Gaming Laws}
+    \item \textbf{Financial Regulation}
+    \item \textbf{E-Commerce Regulation}
+    \item \textbf{Quick Commerce}
+    \item \textbf{Securities Markets}
+\end{itemize}
+\end{multicols}
+
+\vspace{0.5cm}
+
+\subsection*{Research Publications \& Impact}
+
+\subsubsection*{Books \& Monographs}
+
+\begin{itemize}[leftmargin=*,itemsep=0.2cm]
+    \item \textbf{Pandey, Raghav} (2021). \textit{The Law of Corporate Insolvency in India: Resolution and Liquidation}. Thomson Reuters. [Comprehensive treatise on India's insolvency framework]
+
+    \item \textbf{Book Chapter} (2021). ``Examining Matrimonial Personal Laws in India from a lens of Feminist Jurisprudence''. Thomson Reuters.
+
+    \item \textbf{Book Chapter} (2020). ``Criminal Tribes to Habitual Offenders: A Change in name, Not in Spirit''. Thomson Reuters.
+\end{itemize}
+
+\vspace{0.5cm}
+
+\subsubsection*{White Papers \& Research Reports}
+
+\begin{tcolorbox}[colback=goldthread!15,colframe=goldthread,title={\textbf{Featured Research}},fonttitle=\bfseries]
+\textbf{Compliance Preparedness for Futures and Options Market Participants Under the Securities Markets Code, 2025}\\[0.2cm]
+\textit{Authors: Dr. Raghav Pandey \& Mr. Anuraag Saxena}\\
+\textit{Date: February 7, 2026}\\[0.3cm]
+A comprehensive analysis of regulatory transition, structural changes, and global benchmarking for F\&O market participants under India's new securities regulatory framework. This white paper provides critical insights for compliance preparedness and regulatory adaptation.
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\begin{itemize}[leftmargin=*,itemsep=0.2cm]
+    \item \textbf{Thought Paper on Climate Change and Insolvency in India} (October 2024). Insolvency Law Academy. [Exploring the intersection of environmental sustainability and insolvency frameworks]
+
+    \item \textbf{Real Estate Insolvency and the IBC} (2024). Prime Database. [Analyzing challenges in real estate sector insolvency resolution]
+\end{itemize}
+
+\clearpage
+
+\subsubsection*{Policy Commentaries \& Editorials}
+
+The Centre maintains an active presence in policy discourse through evidence-based commentaries in leading national publications:
+
+\vspace{0.3cm}
+
+\begin{itemize}[leftmargin=*,itemsep=0.3cm]
+    \item \textbf{``Supreme Court's spectrum ruling risks weakening insolvency framework''} \\
+    \textit{Business Standard}, February 18, 2026
+
+    \item \textbf{``The Balkanisation of Gig Work''} \\
+    \textit{Financial Express}, January 16, 2026
+
+    \item \textbf{``Section 29A and the cost of treating business failure as misconduct''} \\
+    \textit{Business Standard}, January 7, 2026
+
+    \item \textbf{``Decade-long delay in insolvency protections leaves families vulnerable''} \\
+    \textit{Business Standard} (with M.S. Sahoo), November 17, 2025
+
+    \item \textbf{``Insolvency law must protect homebuyers, avoid complex resolution process''} \\
+    \textit{Business Standard} (with M.S. Sahoo), November 11, 2024
+
+    \item \textbf{``India's insolvency assessment has a yawning gap''} \\
+    \textit{Deccan Herald}, October 10, 2023
+
+    \item \textbf{``Questioning priority: Govt dues in IBC''} \\
+    \textit{Business Standard}, August 29, 2023
+
+    \item \textbf{``Avoidance Transactions''} \\
+    \textit{NLS Business Law Review Blog}, July 24, 2023
+\end{itemize}
+
+\vspace{0.5cm}
+
+\subsection*{Research Impact}
+
+The Centre's research outputs consistently inform policy debates, regulatory reforms, and judicial interpretations. Our work is characterized by:
+
+\begin{itemize}[leftmargin=*,itemsep=0.2cm]
+    \item \textbf{Empirical rigor:} Data-driven analysis grounded in Indian regulatory contexts
+    \item \textbf{Comparative perspective:} Drawing on international best practices and global benchmarking
+    \item \textbf{Practical applicability:} Research designed to inform real-world regulatory design and implementation
+    \item \textbf{Policy relevance:} Direct engagement with regulators, policymakers, and practitioners
+    \item \textbf{Interdisciplinary approach:} Integration of legal, economic, and institutional analysis
+\end{itemize}
+
+\clearpage
+
+\section{Academic Programmes}
+
+\subsection*{PhD Programme in Regulations}
+
+The Centre has initiated a dedicated PhD programme in regulations aimed at producing original scholarship that informs regulatory policy, institutional design, and enforcement practices. The programme emphasizes:
+
+\begin{itemize}[leftmargin=*,itemsep=0.2cm]
+    \item Rigorous interdisciplinary training in law, economics, and policy analysis
+    \item Empirical research methodologies and data analytics
+    \item Deep engagement with regulatory theory and practice
+    \item Supervision by distinguished faculty with regulatory expertise
+    \item Collaboration with regulatory institutions and policy think tanks
+\end{itemize}
+
+\vspace{0.5cm}
+
+\subsection*{Post Graduate Insolvency Programme (PGIP)}
+
+\begin{tcolorbox}[colback=ink!5,colframe=oxblood,arc=2mm]
+\textbf{\headingfont PGIP LLM/MA Programme}\\[0.3cm]
+A pioneering two-year specialized programme in insolvency and restructuring, authorized and certified by the \textbf{Insolvency and Bankruptcy Board of India (IBBI)}.
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\textbf{Programme Highlights:}
+\begin{itemize}[leftmargin=*,itemsep=0.2cm]
+    \item Structured pathway to becoming an Insolvency Professional (IP)
+    \item Reduces prior professional experience requirement from 10 years to 2 years
+    \item Integrated curriculum combining legal, financial, and practical training
+    \item Case-based teaching methodology and hands-on workshops
+    \item Classroom instruction and mandatory internships following UGC and IBBI guidelines
+    \item Direct employability in insolvency profession, professional firms, and regulatory bodies
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Eligibility:}
+\begin{itemize}[leftmargin=*,itemsep=0.1cm]
+    \item Selection based on All India Entrance Test (AIET)
+    \item Professional courses (CS, CA, Cost Accountancy, Law) OR Bachelor's in Technology/Engineering OR Post-graduate in Economics, Finance, Commerce, Management, or Insolvency (minimum 50\% marks)
+    \item Maximum age: 28 years
+\end{itemize}
+
+\vspace{0.5cm}
+
+\subsection*{Credit-Based Courses in University Programmes}
+
+The Centre has integrated structured academic engagement through credit-based courses in NLUD's LLB and LLM programmes:
+
+\begin{itemize}[leftmargin=*,noitemsep]
+    \item Regulations in General
+    \item Regulatory Architecture and Governance
+    \item Securities Regulation
+    \item Competition Regulation
+    \item Insolvency and Bankruptcy Law
+\end{itemize}
+
+\clearpage
+
+\subsection*{Planned Initiatives}
+
+\begin{tcolorbox}[colback=vellum,colframe=goldthread,arc=2mm,boxrule=1.5pt]
+\textbf{\headingfont Short-Term Goals:}
+\begin{itemize}[leftmargin=*,itemsep=0.2cm]
+    \item Specialized certification programmes for senior regulatory functionaries
+    \item One-year executive programme for mid-career regulatory officers
+    \item Intensive workshops on regulatory design and implementation
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{\headingfont Long-Term Vision:}
+\begin{itemize}[leftmargin=*,itemsep=0.2cm]
+    \item Two-year postgraduate programme in Regulation and Compliance—a pioneering initiative in the Indian context
+    \item Designed to produce graduates readily employable by regulators, professional firms, and businesses
+    \item Comprehensive curriculum integrating regulatory theory, compliance frameworks, and practical skills
+\end{itemize}
+\end{tcolorbox}
+
+\vspace{1cm}
+
+\section{Law Economic and Policy Review (LEPR)}
+
+\begin{tcolorbox}[colback=ink,colframe=goldthread,coltext=vellum,arc=3mm,boxrule=2pt]
+\centering
+\textbf{\headingfont\Large Law Economic and Policy Review}\\[0.3cm]
+\textit{An Interdisciplinary Journal Promoting Research on Institutions}\\[0.5cm]
+\textbf{Volume I: September 2026}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+\subsection*{Journal Mission}
+
+Institutions make or break a nation's path to prosperity. Through LEPR, the Centre seeks to promote interdisciplinary research on institutions to develop better functioning state machinery for tomorrow. The journal welcomes submissions from professionals, academicians, policymakers, researchers, and students at the intersection of law, economics, and policy.
+
+\vspace{0.3cm}
+
+\subsection*{Editorial Board}
+
+\begin{itemize}[leftmargin=*,noitemsep]
+    \item \textbf{Editor-in-Chief:} Dr. Raghav Pandey
+    \item \textbf{Managing Editor:} Manas Mahajan
+    \item \textbf{Lead Editor:} Kashish Jumani
+    \item Senior Editors, Associate Editors, and Assistant Editors from NLUD's student body
+\end{itemize}
+
+\vspace{0.3cm}
+
+\subsection*{Submission Guidelines}
+
+\begin{itemize}[leftmargin=*,itemsep=0.1cm]
+    \item \textbf{Length:} 4,000 - 10,000 words (exclusive of abstract/footnotes)
+    \item \textbf{Citation:} OSCOLA (4th Edition)
+    \item \textbf{Originality:} Unpublished works only; Similarity score < 15\%
+    \item \textbf{Submission:} crs\_research@nludelhi.ac.in
+\end{itemize}
+
+\clearpage
+
+\section{Research Collaboration \& Funding Opportunities}
+
+The Centre for Regulatory Studies actively seeks collaborations with research funders, policy institutions, regulatory bodies, and international organizations to advance evidence-based regulatory scholarship.
+
+\vspace{0.5cm}
+
+\subsection*{Areas for Collaborative Research}
+
+\begin{tcolorbox}[colback=goldthread!10,colframe=goldthread,arc=2mm]
+\begin{multicols}{2}
+\begin{itemize}[leftmargin=*,noitemsep]
+    \item Regulatory Impact Assessment
+    \item Behavioral Regulation
+    \item Regulatory Governance
+    \item Cross-Border Regulation
+    \item Digital Economy Regulation
+    \item Financial Market Regulation
+    \item Competition Policy
+    \item Insolvency \& Restructuring
+    \item Environmental Regulation
+    \item Consumer Protection
+\end{itemize}
+\end{multicols}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+\subsection*{Research Capabilities}
+
+\begin{itemize}[leftmargin=*,itemsep=0.2cm]
+    \item \textbf{Empirical Research:} Quantitative and qualitative analysis of regulatory outcomes
+    \item \textbf{Comparative Studies:} Cross-jurisdictional analysis of regulatory frameworks
+    \item \textbf{Policy Analysis:} Evidence-based evaluation of regulatory interventions
+    \item \textbf{Institutional Design:} Research on regulatory architecture and governance
+    \item \textbf{Stakeholder Consultation:} Facilitation of multi-stakeholder dialogues
+    \item \textbf{Capacity Building:} Training and knowledge dissemination programmes
+\end{itemize}
+
+\vspace{0.5cm}
+
+\subsection*{Why Partner with CRS?}
+
+\begin{itemize}[leftmargin=*,itemsep=0.3cm]
+    \item \textbf{Academic Excellence:} Located at India's 2nd-ranked law school (NIRF)
+    \item \textbf{Expert Faculty:} Led by recognized scholars with deep regulatory expertise
+    \item \textbf{Interdisciplinary Approach:} Integration of law, economics, and policy analysis
+    \item \textbf{Policy Impact:} Research designed to inform real-world regulatory reform
+    \item \textbf{Institutional Networks:} Strong connections with regulators, practitioners, and policymakers
+    \item \textbf{Research Infrastructure:} Access to NLUD's 29 research centres and extensive library resources
+    \item \textbf{Student Researchers:} Talented pool of LLB, LLM, and PhD students
+\end{itemize}
+
+\clearpage
+
+\section{Contact \& Collaboration}
+
+\vspace{1cm}
+
+\begin{center}
+\begin{tcolorbox}[colback=vellum,colframe=oxblood,width=0.9\textwidth,arc=3mm,boxrule=2pt]
+\centering
+{\headingfont\Large\textcolor{oxblood}{Centre for Regulatory Studies}}\\[0.3cm]
+{\large National Law University Delhi}\\[1cm]
+
+\begin{tabular}{rl}
+\textbf{Address:} & National Law University Delhi\\
+& Golf Course Road, Pocket 1, Sector 14 Dwarka\\
+& New Delhi - 110078, India\\[0.5cm]
+
+\textbf{Email:} & crs\_research@nludelhi.ac.in\\[0.3cm]
+
+\textbf{Website:} & \url{https://www.regulatorystudies.in}\\[0.3cm]
+
+\textbf{LinkedIn:} & \url{https://www.linkedin.com/company/centre-for-regulatory-studies/}\\[0.5cm]
+
+\textbf{Director:} & Dr. Raghav Pandey\\
+& Assistant Professor of Law \& Director, CRS\\[0.3cm]
+
+\textbf{Chief Patron:} & Prof. (Dr.) G.S. Bajpai\\
+& Vice-Chancellor, NLU Delhi\\
+\end{tabular}
+\end{tcolorbox}
+\end{center}
+
+\vspace{1cm}
+
+\begin{center}
+\begin{tcolorbox}[colback=ink,colframe=goldthread,coltext=vellum,width=0.9\textwidth,arc=3mm]
+\centering
+{\headingfont\large For Research Collaborations, Funding Partnerships,}\\
+{\headingfont\large and Consultancy Enquiries}\\[0.5cm]
+Please contact us at: \textbf{crs\_research@nludelhi.ac.in}
+\end{tcolorbox}
+\end{center}
+
+\vfill
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}\\[0.3cm]
+{\small\textit{``Building the capacity to govern the markets of tomorrow''}}\\[0.2cm]
+{\small Est. 2015 | New Delhi, India}
+\end{center}
+
+\end{document}
